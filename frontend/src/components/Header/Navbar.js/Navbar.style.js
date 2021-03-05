@@ -4,10 +4,21 @@ import { device } from "../../../utils/breakpoints";
 export const NavbarContainer = styled.div`
   width: 100%;
   height: 85px;
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .sticky + .content {
+    padding-top: 60px;
+  }
   .nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-top: 1px solid #ba9e6e;
+    background-color: #262525;
     p {
       margin: 22.5px 0 20.5px 0;
       color: #ba9e6e;
@@ -44,7 +55,11 @@ export const NavbarContainer = styled.div`
 
   @media ${device.tablet} {
     .nav {
-      display: ${(props) => (props.menu ? "block" : "none")};
+      transition: all 200ms ease-out;
+      visibility: ${(props) => (props.menu ? "visible" : "hidden")};
+      opacity: ${(props) => (props.menu ? "1" : "0")};
+      display: block;
+      border-top: none;
       text-align: center;
       p {
         display: none;
@@ -55,6 +70,8 @@ export const NavbarContainer = styled.div`
       justify-content: space-between;
       align-items: center;
       padding: 10px 25px;
+      // background-color: #262525;
+      // border-bottom: 2px solid #ba9e6e;
       .logo-mobile {
         img {
           height: 65px;
