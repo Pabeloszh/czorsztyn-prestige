@@ -1,8 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../../img/logo.png";
 import { NavbarContainer } from "./Navbar.style";
 
 const Navbar = ({ menu, toggleMenu }) => {
+  const [navTop, setNavTop] = useState(window.scrollY);
+  const [winWidth, setWinWidth] = useState(window.innerWidth);
+
+  window.onscroll = () => {
+    setNavTop(window.scrollY);
+  };
+
+  window.onresize = () => {
+    setWinWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    if (navTop > 165 && winWidth > 768) {
+      document.querySelector(".nav").classList.add("sticky");
+    } else {
+      document.querySelector(".nav").classList.remove("sticky");
+    }
+  }, [navTop]);
+
+  useEffect(() => {
+    if (winWidth <= 768) {
+      document.querySelector(".nav").classList.remove("sticky");
+    }
+  }, [winWidth]);
+
   return (
     <NavbarContainer menu={menu}>
       <div className='navbar-mobile'>
@@ -18,7 +43,6 @@ const Navbar = ({ menu, toggleMenu }) => {
           <i class='fas fa-bars'></i>
         </div>
       </div>
-
       <div className='nav'>
         <div>
           <a href=''>STRONA GŁÓWNA</a>
