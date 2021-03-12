@@ -104,6 +104,7 @@ export const MainContainer = styled.div`
   }
 
   @media ${device.tablet} {
+    height: 100vh;
     .title-container {
       top: 50%;
       left: 50%;
