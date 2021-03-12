@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import ApartmentsMain from "./ApartmentsMain/ApartmentsMain";
+import ApartmentsDesc from "./ApartmentsDesc/ApartmentsDesc";
+import { ApartmentsContainer } from "./Apartments.style";
 
 const Apartments = () => {
   return (
-    <div style={{ width: "100%", height: "600px", backgroundColor: "red" }}>
-      Kutas
-    </div>
+    <ApartmentsContainer>
+      <div className='container-slide'>
+        <ApartmentsMain />
+        <ApartmentsDesc />
+      </div>
+    </ApartmentsContainer>
   );
 };
 
