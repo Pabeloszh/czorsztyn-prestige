@@ -11,6 +11,11 @@ export const ApartmentsContainer = styled.div`
   }
   @media only screen and (max-width: 1250px) {
     .container-slide {
+      height: 700px;
+    }
+  }
+  @media ${device.laptop} {
+    .container-slide {
       height: 1000px;
     }
   }

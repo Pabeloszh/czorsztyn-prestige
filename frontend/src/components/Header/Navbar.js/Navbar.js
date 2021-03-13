@@ -40,7 +40,7 @@ const Navbar = ({ menu, toggleMenu }) => {
             toggleMenu(!menu);
           }}
         >
-          <i class='fas fa-bars'></i>
+          <i className='fas fa-bars'></i>
         </div>
       </div>
       <div className='nav'>
