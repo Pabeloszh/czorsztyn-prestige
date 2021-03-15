@@ -1,10 +1,11 @@
 import React from "react";
 import logo from "../../img/logo.png";
 import nadczorsztynem from "../../img/nadczorsztynem.png";
+import { ContactContainer } from "./Contact.style";
 
 const Contact = () => {
   return (
-    <div>
+    <ContactContainer>
       <div className='contact-info'>
         <div className='logo'>
           <img src={logo} alt='' />
@@ -20,7 +21,11 @@ const Contact = () => {
             </div>
             <div>
               <i class='fas fa-map-marker-alt'></i>
-              <p>ul. Za Stylchyn 110 34-440 Kluszkowce</p>
+              <p>
+                ul. Za Stylchyn 110
+                <br />
+                34-440 Kluszkowce
+              </p>
             </div>
           </div>
         </div>
@@ -48,7 +53,7 @@ const Contact = () => {
       <div className='footer'>
         <p>© Copyright - BTF Developer | Wdrożenie: PAWEŁ I MATI</p>
       </div>
-    </div>
+    </ContactContainer>
   );
 };
 
