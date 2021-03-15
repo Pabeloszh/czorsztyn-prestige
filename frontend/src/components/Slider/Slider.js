@@ -27,7 +27,7 @@ const Slider = () => {
           p[i].classList.remove("active");
           p[0].classList.add("active");
         }
-      }, 400);
+      }, 500);
 
     document.querySelector(".photo-slider").style.transition =
       "transform 0.4s ease-in-out";
