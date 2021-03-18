@@ -4,7 +4,7 @@ import { device } from "../../utils/breakpoints";
 
 export const MainContainer = styled.div`
   width: 100%;
-  height: calc(100vh - 250px);
+  height: calc(100vh - 185px);
   position: relative;
   z-index: -1;
   background-image: url(${mainPhoto});
@@ -104,7 +104,8 @@ export const MainContainer = styled.div`
   }
 
   @media ${device.tablet} {
-    height: 100vh;
+    height: calc(100vh - 65px);
+
     .title-container {
       top: 50%;
       left: 50%;
@@ -126,8 +127,20 @@ export const MainContainer = styled.div`
         margin-right: 10px;
       }
     }
+    .scl-media-mobile {
+      bottom: 15px;
+      right: 25px;
+      i {
+        font-size: 25px;
+        color: #ffffff;
+      }
+      i:first-child {
+        margin-right: 15px;
+      }
+    }
   }
   @media ${device.mobileL} {
+    height: 100vh;
     .title-container {
       top: 50%;
       left: 50%;
@@ -149,4 +162,15 @@ export const MainContainer = styled.div`
       }
     }
   }
+  @media ${device.mobileM} {
+    .title-container {
+      h1 {
+        width: 300px;
+        font-size: 24px;
+      }
+      h2 {
+        width: 300px;
+        font-size: 14px;
+      }
+    }
 `;

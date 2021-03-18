@@ -41,7 +41,7 @@ export const SliderContainer = styled.div`
       color: #fff;
       font-family: Open Sans;
       font-weight: 600;
-      font-size: 48px;
+      font-size: 42px;
       text-align: center;
       margin-bottom: 35px;
     }
@@ -59,7 +59,7 @@ export const SliderContainer = styled.div`
         color: #ffffff;
         font-family: Open Sans;
         font-weight: 400;
-        font-size: 24px;
+        font-size: 20px;
         text-align: center;
       }
     }
@@ -71,7 +71,7 @@ export const SliderContainer = styled.div`
       color: #ba9e6e;
       font-family: Open Sans;
       font-weight: 600;
-      font-size: 24px;
+      font-size: 20px;
       text-align: center;
       text-decoration-line: underline;
     }
@@ -105,7 +105,7 @@ export const SliderContainer = styled.div`
         color: #fff;
         font-family: Open Sans;
         font-weight: 600;
-        font-size: 48px;
+        font-size: 36px;
         text-align: center;
         margin-bottom: 35px;
       }
@@ -129,7 +129,6 @@ export const SliderContainer = styled.div`
       left: 50%;
       transform: translate(-50%, -50%);
       h2 {
-        font-size: 36px;
         margin-bottom: 35px;
       }
       div {
@@ -142,12 +141,12 @@ export const SliderContainer = styled.div`
         h4 {
           width: 100%;
           padding: 0 50px;
-          font-size: 20px;
+          font-size: 18px;
         }
       }
       a {
         margin-top: 30px;
-        font-size: 20px;
+        font-size: 18px;
       }
     }
     .nav-dots {
@@ -166,7 +165,7 @@ export const SliderContainer = styled.div`
       left: 50%;
       transform: translate(-50%, -50%);
       h2 {
-        font-size: 32px;
+        font-size: 28px;
         margin-bottom: 35px;
       }
       div {
@@ -179,12 +178,12 @@ export const SliderContainer = styled.div`
         h4 {
           width: 100%;
           padding: 0 35px;
-          font-size: 18px;
+          font-size: 16px;
         }
       }
       a {
         margin-top: 30px;
-        font-size: 18px;
+        font-size: 16px;
       }
     }
     .nav-dots {
@@ -216,12 +215,12 @@ export const SliderContainer = styled.div`
         h4 {
           width: 100%;
           padding: 0 15px;
-          font-size: 14px;
+          font-size: 12px;
         }
       }
       a {
         margin-top: 20px;
-        font-size: 14px;
+        font-size: 12px;
       }
     }
     .nav-dots {

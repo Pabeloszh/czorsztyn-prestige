@@ -15,7 +15,7 @@ const Navbar = ({ menu, toggleMenu }) => {
   };
 
   useEffect(() => {
-    if (navTop > 165 && winWidth > 768) {
+    if (navTop > 119 && winWidth > 768) {
       document.querySelector(".nav").classList.add("sticky");
     } else {
       document.querySelector(".nav").classList.remove("sticky");

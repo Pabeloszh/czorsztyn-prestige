@@ -4,6 +4,7 @@ import { SliderContainer } from "./Slider.style";
 const Slider = () => {
   const [slide, setSlide] = useState(0);
   const [cooldown, setCooldown] = useState(false);
+  const [last, isLast] = useState(false);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -18,23 +19,27 @@ const Slider = () => {
   }, []);
 
   useEffect(() => {
-    if (slide === 3)
-      setTimeout(() => {
-        const p = document.querySelectorAll(".nav-dots p");
-        document.querySelector(".photo-slider").style.transition = "";
-        setSlide(0);
-        for (let i = 0; i < p.length; i++) {
-          p[i].classList.remove("active");
-          p[0].classList.add("active");
-        }
-      }, 500);
-
-    document.querySelector(".photo-slider").style.transition =
-      "transform 0.4s ease-in-out";
+    if (slide === 0 && last)
+      document.querySelector(".photo-slider").style.transition = "";
+    else
+      document.querySelector(".photo-slider").style.transition =
+        "transform 0.4s ease-in-out";
 
     document.querySelector(".photo-slider").style.transform = `translateX(${
       -document.querySelector(".photo-slider").clientWidth * slide
     }px)`;
+
+    if (slide === 3) {
+      isLast(true);
+      const p = document.querySelectorAll(".nav-dots p");
+      setTimeout(() => setSlide(0), 500);
+      for (let i = 0; i < p.length; i++) {
+        p[i].classList.remove("active");
+        p[0].classList.add("active");
+      }
+    } else {
+      isLast(false);
+    }
   }, [slide]);
 
   useEffect(() => {
@@ -49,12 +54,6 @@ const Slider = () => {
             p[i].classList.remove("active");
             p[slide + 1].classList.add("active");
           }
-        }
-      } else {
-        setSlide(0);
-        for (let i = 0; i < p.length; i++) {
-          p[i].classList.remove("active");
-          p[0].classList.add("active");
         }
       }
     }
@@ -118,13 +117,6 @@ const Slider = () => {
         >
           {"•"}
         </p>
-        {/* <p
-          onClick={(e) => {
-            toggleSlider(e, 3);
-          }}
-        >
-          {"•"}
-        </p> */}
       </div>
     </SliderContainer>
   );

@@ -25,7 +25,7 @@ export const ApartmentsMainContainer = styled.div`
       color: #ba9e6e;
       font-weight: 400;
       font-family: "Noto Serif", serif;
-      font-size: 36px;
+      font-size: 32px;
     }
   }
   .mid-hr {
@@ -201,7 +201,7 @@ export const ApartmentsMainContainer = styled.div`
     }
   }
   @media ${device.laptop} {
-    height: 1000px;
+    height: 900px;
     .mid-hr {
       display: none;
     }
@@ -226,14 +226,14 @@ export const ApartmentsMainContainer = styled.div`
     }
   }
   @media ${device.tablet} {
-    height: 800px;
+    height: 775px;
 
     .title {
       hr {
         width: 12.5%;
       }
       h3 {
-        font-size: 26px;
+        font-size: 24px;
       }
     }
     .mid-hr {
@@ -298,15 +298,14 @@ export const ApartmentsMainContainer = styled.div`
     }
   }
   @media ${device.mobileL} {
-    height: 800px;
-
+    height: 625px;
     .title {
       justify-content: center;
       hr {
         display: none;
       }
       h3 {
-        font-size: 24px;
+        font-size: 20px;
       }
     }
     .mid-hr {

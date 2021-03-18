@@ -3,7 +3,7 @@ import { device } from "../../utils/breakpoints";
 
 export const HeaderContainer = styled.div`
   width: 100%;
-  height: 250px;
+  height: 185px;
   background-color: #262525;
   position: relative;
   top: 0;
@@ -23,14 +23,25 @@ export const HeaderContainer = styled.div`
     width: 100%;
     text-align: center;
     img {
-      width: 232.77px;
-      height: 100px;
-      margin: 30px 0;
+      // width: 232.77px;
+      height: 75px;
+      margin: 20px 0;
     }
   }
+
+  @media ${device.laptop} {
+    height: 155px;
+    .logo {
+      img {
+        height: 65px;
+        margin: 15px 0;
+      }
+    }
+  }
+
   @media ${device.tablet} {
     position: fixed;
-    height: ${(props) => (props.menu ? "100vh" : "105px")};
+    height: ${(props) => (props.menu ? "100vh" : "65px")};
     transition: height 200ms linear;
     border-bottom: 2px solid #ba9e6e;
     .logo {
@@ -38,6 +49,6 @@ export const HeaderContainer = styled.div`
     }
   }
   @media ${device.mobileL} {
-    height: ${(props) => (props.menu ? "100vh" : "75px")};
+    height: ${(props) => (props.menu ? "100vh" : "65px")};
   }
 `;

@@ -16,12 +16,17 @@ export const ApartmentsContainer = styled.div`
   }
   @media ${device.laptop} {
     .container-slide {
-      height: 1000px;
+      height: 900px;
     }
   }
   @media ${device.tablet} {
     .container-slide {
-      height: 800px;
+      height: 775px;
+    }
+  }
+  @media ${device.mobileL} {
+    .container-slide {
+      height: 625px;
     }
   }
 `;
