@@ -160,7 +160,7 @@ export const ApartmentDescContainer = styled.div`
     }
   }
   @media ${device.laptop} {
-    height: 1000px;
+    height: 900px;
     grid-template-columns: 100%;
     grid-template-rows: 400px 600px;
     .gallery-cont {
@@ -181,7 +181,7 @@ export const ApartmentDescContainer = styled.div`
     .desc-cont {
       border-left: none;
       border-top: 4px #ba9e6e solid;
-      padding: 85px 0;
+      padding: 55px 0;
       .title {
         div {
           h4 {
@@ -221,7 +221,7 @@ export const ApartmentDescContainer = styled.div`
     }
   }
   @media ${device.tablet} {
-    height: 800px;
+    height: 775px;
     grid-template-rows: 350px 450px;
     .gallery-cont {
       border-top: 2px #ba9e6e solid;
@@ -242,7 +242,7 @@ export const ApartmentDescContainer = styled.div`
     .desc-cont {
       border-left: none;
       border-top: 2px #ba9e6e solid;
-      padding: 55px 0;
+      padding: 40px 0;
       .title {
         hr {
           border: 1px #ba9e6e solid;
@@ -288,8 +288,8 @@ export const ApartmentDescContainer = styled.div`
     }
   }
   @media ${device.mobileL} {
-    height: 800px;
-    grid-template-rows: 350px 450px;
+    height: 625px;
+    grid-template-rows: 250px 375px;
     .gallery-cont {
       border-top: 2px #ba9e6e solid;
       .direction {
@@ -309,7 +309,7 @@ export const ApartmentDescContainer = styled.div`
     .desc-cont {
       border-left: none;
       border-top: 2px #ba9e6e solid;
-      padding: 75px 0;
+      padding: 40px 0;
       .title {
         hr {
           border: 1px #ba9e6e solid;
