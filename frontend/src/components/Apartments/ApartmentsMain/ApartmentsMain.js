@@ -1,9 +1,11 @@
 import React, { useEffect, useContext } from "react";
 import { ApartmentsContext } from "../../../context/ApartmentsContext";
 import { ApartmentsMainContainer } from "./ApartmentsMain.style";
+import { useLocation } from "react-router-dom";
 
 const Apartments = () => {
   const [apartment, toggleApartment] = useContext(ApartmentsContext);
+  const location = useLocation();
 
   function handleResize() {
     document.querySelector(".container-slide").style.transition =
@@ -14,7 +16,9 @@ const Apartments = () => {
   }
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize, false);
+    if (location.pathname !== "/")
+      window.removeEventListener("resize", handleResize);
+    else window.addEventListener("resize", handleResize, false);
   }, []);
 
   function toggleDesc(cond) {
@@ -27,14 +31,6 @@ const Apartments = () => {
       ".container-slide"
     ).clientWidth}px)`;
   }
-
-  // function toggleApart() {
-  //   document.querySelector(".container-slide").style.transition =
-  //     "transform 0.4s ease-in-out";
-  //   document.querySelector(
-  //     ".container-slide"
-  //   ).style.transform = `translateX(0px)`;
-  // }
 
   return (
     <ApartmentsMainContainer>
