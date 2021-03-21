@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ApartmentsContext } from "../../../context/ApartmentsContext";
 import { ApartmentDescContainer } from "./ApartmentsDesc.style";
+import { ApartmentsModalContext } from "../../../context/ApartmentsModalContext";
 
 const ApartmentsDesc = () => {
   const [actualPhoto, setActualPhoto] = useState(0);
   const [photosNumber, setPhotosNumber] = useState();
   const [apartment, toggleApartment] = useContext(ApartmentsContext);
+  const [modal, toggleModal] = useContext(ApartmentsModalContext);
 
   useEffect(() => {
     setPhotosNumber(document.querySelectorAll(".img-cont").length);
@@ -47,9 +49,9 @@ const ApartmentsDesc = () => {
         <ApartmentDescContainer>
           <div className='gallery-cont'>
             <div className='img-slide'>
-              <div className='img-cont'></div>
-              <div className='img-cont'></div>
-              <div className='img-cont'></div>
+              <div className='img-cont' onClick={() => toggleModal(true)}></div>
+              <div className='img-cont' onClick={() => toggleModal(true)}></div>
+              <div className='img-cont' onClick={() => toggleModal(true)}></div>
             </div>
             <div className='go-back'>
               <i
@@ -141,9 +143,9 @@ const ApartmentsDesc = () => {
           {/* AP-1 */}
           <div className='gallery-cont'>
             <div className='img-slide'>
-              <div className='img-cont'></div>
-              <div className='img-cont'></div>
-              <div className='img-cont'></div>
+              <div className='img-cont' onClick={() => toggleModal(true)}></div>
+              <div className='img-cont' onClick={() => toggleModal(true)}></div>
+              <div className='img-cont' onClick={() => toggleModal(true)}></div>
             </div>
             <div className='go-back'>
               <i
