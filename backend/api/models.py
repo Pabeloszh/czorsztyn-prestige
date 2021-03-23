@@ -7,6 +7,7 @@ from django.db import models
 APPNUMBER_CHOICES= [
     (1, '1'),
     (2, '2'),
+    ('other', 'other'),
     ]
 
 
