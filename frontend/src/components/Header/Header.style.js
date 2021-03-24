@@ -1,5 +1,17 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { device } from "../../utils/breakpoints";
+
+const logoAnim = keyframes`
+  0% {
+    opacity:0;
+  }
+  50%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+`;
 
 export const HeaderContainer = styled.div`
   width: 100%;
@@ -22,6 +34,7 @@ export const HeaderContainer = styled.div`
   .logo {
     width: 100%;
     text-align: center;
+    animation: ${logoAnim} 2750ms linear;
     img {
       // width: 232.77px;
       height: 75px;

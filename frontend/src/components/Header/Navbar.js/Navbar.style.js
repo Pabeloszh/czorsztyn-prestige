@@ -1,5 +1,27 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { device } from "../../../utils/breakpoints";
+
+const lineAnim = keyframes`
+  0% {
+    content: "";
+    transform: scaleX(0);
+  }
+  100%{
+    transform: scaleX(1);
+  }
+`;
+
+const textAnim = keyframes`
+  0% {
+    opacity:0;
+  }
+  50%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+`;
 
 export const NavbarContainer = styled.div`
   width: 100%;
@@ -19,14 +41,18 @@ export const NavbarContainer = styled.div`
     align-items: center;
     border-top: 1px solid #ba9e6e;
     background-color: #262525;
+    animation: ${lineAnim} 500ms linear;
     p {
-      // margin: 22.5px 0 20.5px 0;
       color: #ba9e6e;
       font-size: 36px;
+      animation: ${textAnim} 1500ms linear;
     }
     div {
       height: 65px;
       padding: 21.5px 0;
+      cursor: pointer;
+      position: relative;
+      animation: ${textAnim} 1500ms linear;
       a {
         color: white;
         text-decoration: none;
@@ -34,6 +60,24 @@ export const NavbarContainer = styled.div`
         margin: 0 15px;
         font-family: "Open Sans", sans-serif;
       }
+    }
+    .active {
+      border-bottom: 1px solid #ba9e6e;
+    }
+    div:not(.active)::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background-color: #ba9e6e;
+      transition: transform 200ms ease-in-out;
+      transform: scaleX(0);
+    }
+    div:not(.active):hover::before,
+    div:not(.active):focus::before {
+      transform: scaleX(1);
     }
   }
   .navbar-mobile {
@@ -43,9 +87,6 @@ export const NavbarContainer = styled.div`
   @media ${device.laptop} {
     height: 55px;
     .nav {
-      p {
-        // margin: 20.5px 0 22.5px 0;
-      }
       div {
         height: 55px;
         padding: 18px 0;
@@ -67,14 +108,18 @@ export const NavbarContainer = styled.div`
       p {
         display: none;
       }
+      .active {
+        border-bottom: none;
+        a {
+          color: #ba9e6e;
+        }
+      }
     }
     .navbar-mobile {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 5px 25px;
-      // background-color: #262525;
-      // border-bottom: 2px solid #ba9e6e;
       .logo-mobile {
         img {
           height: 45px;
@@ -90,23 +135,6 @@ export const NavbarContainer = styled.div`
       }
     }
   }
-  // @media ${device.mobileL} {
-  //   .navbar-mobile {
-  //     height: 55px;
-  //     .logo-mobile {
-  //       img {
-  //         height: 45px;
-  //       }
-  //     }
-  //     #menu-icon {
-  //       height: 75px;
-  //       i {
-  //         margin: 18.5px 0;
-  //         font-size: 32px;
-  //       }
-  //     }
-  //   }
-  // }
   @media ${device.mobileM} {
     .navbar-mobile {
       justify-content: flex-end;

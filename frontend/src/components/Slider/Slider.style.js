@@ -41,7 +41,7 @@ export const SliderContainer = styled.div`
       color: #fff;
       font-family: Open Sans;
       font-weight: 600;
-      font-size: 42px;
+      font-size: 50px;
       text-align: center;
       margin-bottom: 35px;
     }
