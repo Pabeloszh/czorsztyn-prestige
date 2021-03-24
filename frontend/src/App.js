@@ -1,5 +1,6 @@
-import React, { useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import API from "./utils/API";
 import Header from "./components/Header/Header";
 import MainContent from "./components/MainContent/MainContent";
 import Apartments from "./components/Apartments/Apartments";
@@ -11,6 +12,14 @@ import { ApartmentsModalContext } from "./context/ApartmentsModalContext";
 
 const App = () => {
   const [modal, toggleModal] = useContext(ApartmentsModalContext);
+
+  useEffect(() => {
+    (async () => {
+      const res = await API.getAll();
+      console.log(res);
+    })();
+  }, []);
+
   return (
     <Router>
       <Header />
