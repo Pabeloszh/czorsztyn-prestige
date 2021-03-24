@@ -5,4 +5,4 @@ from .models import ApartmentsPics
 class PicSerializer(serializers.ModelSerializer):
     class Meta:
         model = ApartmentsPics
-        fields = ['ap_number', 'title', 'pic']
+        fields = ['ap_number', 'placement', 'pic']
