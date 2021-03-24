@@ -1,6 +1,45 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import mainPhoto from "../../img/main-photo.png";
 import { device } from "../../utils/breakpoints";
+
+const socialMedia = keyframes`
+  0%{
+    content:"";
+    opacity:0;
+    // transform: scaleY(0) rotate(90deg);
+  }
+  50%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+    // transform: scaleY(1) rotate(90deg);
+  }
+`;
+
+// const title = keyframes`
+//   0% {
+//     letter-spacing: -0.5em;
+//     opacity: 0;
+//   }
+//   80% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// `;
+// animation: ${title} 2750ms linear;
+
+// const background = keyframes`
+//   0%{
+//     background-position: 50% 10px;
+//   }
+//   100% {
+//     background-position: 50% 50%;
+//   }
+// `;
+// animation: ${background} 1000ms linear;
 
 export const MainContainer = styled.div`
   width: 100%;
@@ -11,10 +50,12 @@ export const MainContainer = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   .scl-media-mobile {
     display: none;
   }
   .scl-media {
+    animation: ${socialMedia} 1500ms linear;
     position: absolute;
     top: calc(50% + 35px);
     left: -40px;
@@ -46,6 +87,7 @@ export const MainContainer = styled.div`
     }
   }
   .title-container {
+    animation: ${socialMedia} 1500ms linear;
     position: absolute;
     top: calc(50%);
     left: 50%;

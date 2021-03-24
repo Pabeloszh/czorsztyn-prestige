@@ -1,10 +1,25 @@
 import React, { useState, useEffect } from "react";
 import logo from "../../../img/logo.png";
 import { NavbarContainer } from "./Navbar.style";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = ({ menu, toggleMenu }) => {
   const [navTop, setNavTop] = useState(window.scrollY);
   const [winWidth, setWinWidth] = useState(window.innerWidth);
+  const location = useLocation();
+
+  useEffect(() => {
+    const divs = document.querySelectorAll(".nav div");
+    divs.forEach((d) => {
+      d.classList.remove("active");
+    });
+    if (location.pathname === "/") {
+      divs[0].classList.add("active");
+    }
+    if (location.pathname === "/gallery") {
+      divs[4].classList.add("active");
+    }
+  }, [location.pathname]);
 
   window.onscroll = () => {
     setNavTop(window.scrollY);
@@ -45,7 +60,7 @@ const Navbar = ({ menu, toggleMenu }) => {
       </div>
       <div className='nav'>
         <div>
-          <a href=''>STRONA GŁÓWNA</a>
+          <Link to='/'>STRONA GŁÓWNA</Link>
         </div>
         <p>{"•"}</p>
         <div>
@@ -61,7 +76,7 @@ const Navbar = ({ menu, toggleMenu }) => {
         </div>
         <p>{"•"}</p>
         <div>
-          <a href=''>GALERIA</a>
+          <Link to='/gallery'>GALERIA</Link>
         </div>
         <p>{"•"}</p>
         <div>
