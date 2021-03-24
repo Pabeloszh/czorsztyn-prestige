@@ -29,7 +29,8 @@ SECRET_KEY = 'p29(mnz2kz+o1_8+e)=#h6%zu!y#0m(k$+2bzfibjxp@4y57%&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Application definition
@@ -139,3 +140,11 @@ if DEBUG:
 
     MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
     MEDIA_URL = '/media/'
+
+"""
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    )
+}
+"""

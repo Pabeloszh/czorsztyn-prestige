@@ -6,6 +6,6 @@ from .models import ApartmentsPics
 
 @admin.register(ApartmentsPics)
 class ApartmentAdmin(admin.ModelAdmin):
-    list_display = ["ap_number", "title"]
+    list_display = ["title", "ap_number", 'placement']
     list_filter = ("ap_number",)
     search_fields = ("ap_number", "title")
