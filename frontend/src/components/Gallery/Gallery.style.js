@@ -11,13 +11,22 @@ export const GalleryContainer = styled.div`
   div {
     width: 100%;
     height: 250px;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
   }
-  @media ${device.laptop} {
+  @media only screen and (max-width: 1250px) {
     padding: 60px 10% 60px calc(10% - 30px);
     grid-template-columns: repeat(2, 50%);
   }
   @media ${device.tablet} {
     padding: 60px 10%;
     grid-template-columns: 100%;
+  }
+  @media ${device.mobileL} {
+    div {
+      width: 100%;
+      height: 175px;
+    }
   }
 `;

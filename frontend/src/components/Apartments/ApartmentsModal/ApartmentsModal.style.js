@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../../utils/breakpoints";
 
 export const ModalContainer = styled.div`
   position: fixed;
@@ -18,7 +19,7 @@ export const ModalContainer = styled.div`
   }
   .close {
     position: absolute;
-    z-index: 5;
+    z-index: 6;
     top: 20px;
     right: 20px;
     i {
@@ -47,8 +48,39 @@ export const ModalContainer = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding: 2% 10%;
+    width: 100%;
+    height: 100vh;
+    position: relative;
     img {
-      height: 75vh;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
     }
+  }
+
+  @media ${device.laptop}{
+    .modal-box {
+      position: absolute;
+      z-index: 5;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      
+      width: 100%;
+      height: 100vh;
+      position: relative;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 100%;
+        min-width:90vw;
+        max-height:95vh;
+        min-height:auto;
+      }
   }
 `;

@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { MainContainer } from "./MainContent.style";
+import { MainDataContext } from "../../context/MainDataContext";
 
 const MainContent = () => {
+  const [data, setData] = useContext(MainDataContext);
+
   return (
-    <MainContainer>
+    <MainContainer
+      data={
+        data.find((obj) => {
+          if (obj.placement === "mainphoto") return obj;
+        }).pic
+      }
+    >
       <div className='scl-media'>
         <h4>SOCIAL MEDIA</h4>
         <div className='line'>

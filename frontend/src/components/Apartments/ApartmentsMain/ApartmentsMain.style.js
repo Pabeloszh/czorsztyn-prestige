@@ -1,11 +1,8 @@
 import styled from "styled-components";
 import { device } from "../../../utils/breakpoints";
-import ap1Main from "../../../img/ap-1-main.png";
-import ap2Main from "../../../img/ap-2-main.png";
-import ap1Hover from "../../../img/ap-1-hover.png";
-import ap2Hover from "../../../img/ap-2-hover.png";
 
 export const ApartmentsMainContainer = styled.div`
+  position: relative;
   min-width: 100%;
   height: 700px;
   background-color: #262525;
@@ -168,18 +165,18 @@ export const ApartmentsMainContainer = styled.div`
       }
     }
     .apartm-container:first-child {
-      background-image: url(${ap1Main});
+      background-image: url(${(props) => props.ap1main});
       margin-right: 30px;
     }
     .apartm-container:last-child {
-      background-image: url(${ap2Main});
+      background-image: url(${(props) => props.ap2main});
       margin-left: 30px;
     }
     .apartm-container:first-child:hover {
-      background-image: url(${ap1Hover});
+      background-image: url(${(props) => props.ap1hover});
     }
     .apartm-container:last-child:hover {
-      background-image: url(${ap2Hover});
+      background-image: url(${(props) => props.ap2hover});
     }
   }
   @media only screen and (max-width: 1250px) {

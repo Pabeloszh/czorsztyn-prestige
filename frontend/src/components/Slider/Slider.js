@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
+import { MainDataContext } from "../../context/MainDataContext";
 import { SliderContainer } from "./Slider.style";
 
 const Slider = () => {
+  const [data, setData] = useContext(MainDataContext);
   const [slide, setSlide] = useState(0);
   const [cooldown, setCooldown] = useState(false);
   const [last, isLast] = useState(false);
@@ -72,10 +75,31 @@ const Slider = () => {
     <SliderContainer>
       <div className='slider'>
         <div className='photo-slider'>
-          <div className='photo'></div>
-          <div className='photo'></div>
-          <div className='photo'></div>
-          <div className='photo'></div>
+          {data
+            .filter((obj) => {
+              if (obj.placement === "slider") return obj;
+            })
+            .map((o) => {
+              return (
+                <div
+                  className='photo'
+                  style={{
+                    backgroundImage: "url(" + o.pic + ")",
+                  }}
+                ></div>
+              );
+            })}
+          <div
+            className='photo'
+            style={{
+              backgroundImage:
+                "url(" +
+                data.filter((obj) => {
+                  return obj.placement === "slider";
+                })[0].pic +
+                ")",
+            }}
+          ></div>
         </div>
         <div className='slider-info'>
           <h2>Zobacz Nasze Zdjęcia</h2>
@@ -91,7 +115,9 @@ const Slider = () => {
             </h4>
             <hr />
           </div>
-          <a href=''>Przejdź do galerii</a>
+          <Link to='/gallery' onClick={() => window.scrollTo(0, 0)}>
+            Przejdź do galerii
+          </Link>
         </div>
       </div>
       <div className='nav-dots'>

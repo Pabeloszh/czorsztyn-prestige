@@ -8,34 +8,46 @@ import Slider from "./components/Slider/Slider";
 import Contact from "./components/Contact/Contact";
 import ApartmentsModal from "./components/Apartments/ApartmentsModal/ApartmentsModal";
 import Gallery from "./components/Gallery/Gallery";
+import GalleryModal from "./components/Gallery/GalleryModal/GalleryModal";
 import { ApartmentsModalContext } from "./context/ApartmentsModalContext";
+import { GalleryModalContext } from "./context/GalleryModalContext";
+import { MainDataContext } from "./context/MainDataContext";
 
 const App = () => {
   const [modal, toggleModal] = useContext(ApartmentsModalContext);
+  const [galModal, toggleGalModal] = useContext(GalleryModalContext);
+  const [data, setData] = useContext(MainDataContext);
 
   useEffect(() => {
     (async () => {
       const res = await API.getAll();
-      console.log(res);
+      setData(res.data);
     })();
   }, []);
 
   return (
-    <Router>
-      <Header />
-      <Switch>
-        <Route exact path='/'>
-          <MainContent />
-          <Apartments />
-          <Slider />
-          {modal && <ApartmentsModal />}
-        </Route>
-        <Route path='/gallery'>
-          <Gallery />
-        </Route>
-      </Switch>
-      <Contact />
-    </Router>
+    <>
+      {data ? (
+        <Router>
+          <Header />
+          <Switch>
+            <Route exact path='/'>
+              <MainContent />
+              <Apartments />
+              <Slider />
+              {modal.isToggle && <ApartmentsModal />}
+            </Route>
+            <Route path='/gallery'>
+              <Gallery />
+              {galModal.isToggle && <GalleryModal />}
+            </Route>
+          </Switch>
+          <Contact />
+        </Router>
+      ) : (
+        <div>CHUJ</div>
+      )}
+    </>
   );
 };
 

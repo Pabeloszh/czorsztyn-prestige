@@ -1,18 +1,22 @@
 import React, { useEffect, useContext } from "react";
+import { MainDataContext } from "../../../context/MainDataContext";
 import { ApartmentsContext } from "../../../context/ApartmentsContext";
 import { ApartmentsMainContainer } from "./ApartmentsMain.style";
 import { useLocation } from "react-router-dom";
 
 const Apartments = () => {
+  const [data, setData] = useContext(MainDataContext);
   const [apartment, toggleApartment] = useContext(ApartmentsContext);
   const location = useLocation();
 
   function handleResize() {
-    document.querySelector(".container-slide").style.transition =
-      "transform 0.4s ease-in-out";
-    document.querySelector(
-      ".container-slide"
-    ).style.transform = `translateX(0px)`;
+    if (document.querySelector(".container-slide")) {
+      document.querySelector(".container-slide").style.transition =
+        "transform 0.4s ease-in-out";
+      document.querySelector(
+        ".container-slide"
+      ).style.transform = `translateX(0px)`;
+    }
   }
 
   useEffect(() => {
@@ -33,7 +37,28 @@ const Apartments = () => {
   }
 
   return (
-    <ApartmentsMainContainer>
+    <ApartmentsMainContainer
+      ap1main={
+        data.find((obj) => {
+          if (obj.placement === "ap1main") return obj;
+        }).pic
+      }
+      ap2main={
+        data.find((obj) => {
+          if (obj.placement === "ap2main") return obj;
+        }).pic
+      }
+      ap1hover={
+        data.find((obj) => {
+          if (obj.placement === "ap1hover") return obj;
+        }).pic
+      }
+      ap2hover={
+        data.find((obj) => {
+          if (obj.placement === "ap2hover") return obj;
+        }).pic
+      }
+    >
       <div className='title'>
         <hr />
         <h3>NASZE APARTAMENTY</h3>
@@ -68,7 +93,7 @@ const Apartments = () => {
               nisi ut aliquip ex ea commodo consequat.
             </p>
             <div className='ap-buttons'>
-              <a href=''>Kontakt</a>
+              <a href='http://www.bankfoto.pl/cz2a/'>SpacerVR</a>
               <button onClick={() => toggleDesc(false)}>Info</button>
             </div>
           </div>
@@ -100,7 +125,7 @@ const Apartments = () => {
               nisi ut aliquip ex ea commodo consequat.
             </p>
             <div className='ap-buttons'>
-              <a href=''>Kontakt</a>
+              <a href='https://www.bankfoto.pl/cz2b/'>SpacerVR</a>
               <button onClick={() => toggleDesc(true)}>Info</button>
             </div>
           </div>
