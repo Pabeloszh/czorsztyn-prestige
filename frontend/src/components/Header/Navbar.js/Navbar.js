@@ -9,6 +9,11 @@ const Navbar = ({ menu, toggleMenu }) => {
   const location = useLocation();
 
   useEffect(() => {
+    if (menu) document.querySelector("#nav-icon3").classList.add("open");
+    else document.querySelector("#nav-icon3").classList.remove("open");
+  }, [menu]);
+
+  useEffect(() => {
     const divs = document.querySelectorAll(".nav div");
     divs.forEach((d) => {
       d.classList.remove("active");
@@ -17,7 +22,7 @@ const Navbar = ({ menu, toggleMenu }) => {
       divs[0].classList.add("active");
     }
     if (location.pathname === "/gallery") {
-      divs[4].classList.add("active");
+      divs[3].classList.add("active");
     }
   }, [location.pathname]);
 
@@ -47,7 +52,10 @@ const Navbar = ({ menu, toggleMenu }) => {
     <NavbarContainer menu={menu}>
       <div className='navbar-mobile'>
         <div className='logo-mobile'>
-          <img src={logo} alt='logo' />
+          <img
+            src='https://czorsztyn-prestige-s3bucket.s3.eu-central-1.amazonaws.com/logo.png?fbclid=IwAR3Bg9NTDa7LmP39NDD9N47Eu4u1084XAGpfape8mUSeaVg8zBI6Y0QH3Ew'
+            alt='logo'
+          />
         </div>
         <div
           id='menu-icon'
@@ -55,32 +63,33 @@ const Navbar = ({ menu, toggleMenu }) => {
             toggleMenu(!menu);
           }}
         >
-          <i className='fas fa-bars'></i>
+          <div id='nav-icon3'>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
       <div className='nav'>
-        <div>
+        <div onClick={() => window.scrollTo(0, 0)}>
           <Link to='/'>STRONA GŁÓWNA</Link>
         </div>
         <p>{"•"}</p>
         <div>
-          <a href=''>REZERWACJE</a>
+          <a href='https://czorsztynprestige.pl/rezerwacje/'>REZERWACJE</a>
         </div>
         <p>{"•"}</p>
         <div>
           <a href=''>ATRAKCJE</a>
         </div>
         <p>{"•"}</p>
-        <div>
-          <a href=''>SPACER VR</a>
-        </div>
-        <p>{"•"}</p>
-        <div>
+        <div onClick={() => window.scrollTo(0, 0)}>
           <Link to='/gallery'>GALERIA</Link>
         </div>
         <p>{"•"}</p>
-        <div>
-          <a href=''>KONTAKT</a>
+        <div onClick={() => window.scrollTo(0, document.body.scrollHeight)}>
+          <a>KONTAKT</a>
         </div>
       </div>
     </NavbarContainer>

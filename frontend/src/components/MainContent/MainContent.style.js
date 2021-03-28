@@ -6,51 +6,24 @@ const socialMedia = keyframes`
   0%{
     content:"";
     opacity:0;
-    // transform: scaleY(0) rotate(90deg);
   }
   50%{
     opacity:0;
   }
   100%{
     opacity:1;
-    // transform: scaleY(1) rotate(90deg);
   }
 `;
-
-// const title = keyframes`
-//   0% {
-//     letter-spacing: -0.5em;
-//     opacity: 0;
-//   }
-//   80% {
-//     opacity: 0;
-//   }
-//   100% {
-//     opacity: 1;
-//   }
-// `;
-// animation: ${title} 2750ms linear;
-
-// const background = keyframes`
-//   0%{
-//     background-position: 50% 10px;
-//   }
-//   100% {
-//     background-position: 50% 50%;
-//   }
-// `;
-// animation: ${background} 1000ms linear;
 
 export const MainContainer = styled.div`
   width: 100%;
   height: calc(100vh - 185px);
   position: relative;
   z-index: -1;
-  background-image: url(${mainPhoto});
+  background-image: url(${(props) => props.data});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   .scl-media-mobile {
     display: none;
   }
@@ -114,6 +87,7 @@ export const MainContainer = styled.div`
       display: none;
     }
     .scl-media-mobile {
+      animation: ${socialMedia} 1500ms linear;
       display: flex;
       position: absolute;
       bottom: 25px;
@@ -129,6 +103,7 @@ export const MainContainer = styled.div`
   }
 
   @media ${device.laptop} {
+    height: calc(100vh - 155px);
     .title-container {
       h1 {
         font-weight: 400;
@@ -146,8 +121,7 @@ export const MainContainer = styled.div`
   }
 
   @media ${device.tablet} {
-    height: calc(100vh - 65px);
-
+    height:100vh;
     .title-container {
       top: 50%;
       left: 50%;

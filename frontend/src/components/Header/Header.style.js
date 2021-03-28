@@ -36,7 +36,6 @@ export const HeaderContainer = styled.div`
     text-align: center;
     animation: ${logoAnim} 2750ms linear;
     img {
-      // width: 232.77px;
       height: 75px;
       margin: 20px 0;
     }

@@ -21,13 +21,10 @@ export const SliderContainer = styled.div`
         width: 100%;
         height: 100%;
 
-        background-image: url(${slider});
+        background-image: url(${(props) => props.data});
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-      }
-      .photo:nth-child(3) {
-        background-image: url(${foto});
       }
     }
   }

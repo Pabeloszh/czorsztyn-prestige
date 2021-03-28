@@ -8,7 +8,10 @@ const Contact = () => {
     <ContactContainer>
       <div className='contact-info'>
         <div className='logo'>
-          <img src={logo} alt='' />
+          <img
+            src='https://czorsztyn-prestige-s3bucket.s3.eu-central-1.amazonaws.com/logo.png?fbclid=IwAR3Bg9NTDa7LmP39NDD9N47Eu4u1084XAGpfape8mUSeaVg8zBI6Y0QH3Ew'
+            alt=''
+          />
         </div>
         <div className='contact'>
           <h5>Kontakt:</h5>
@@ -45,7 +48,10 @@ const Contact = () => {
             <div>
               <i class='fab fa-facebook'></i>
               <i class='fab fa-instagram'></i>
-              <img src={nadczorsztynem} alt='' />
+              <img
+                src='https://czorsztyn-prestige-s3bucket.s3.eu-central-1.amazonaws.com/nadczorsztynem.4f0022ab.png'
+                alt=''
+              />
             </div>
           </div>
         </div>

@@ -1,0 +1,160 @@
+import React, { useState, useEffect, useContext } from "react";
+import { MainDataContext } from "../../../../context/MainDataContext";
+import { ApartmentDescContainer } from "../ApartmentsDesc.style";
+import { ApartmentsModalContext } from "../../../../context/ApartmentsModalContext";
+
+const ApartmentsInfo1 = () => {
+  const [data, setData] = useContext(MainDataContext);
+  const [actualPhoto, setActualPhoto] = useState(0);
+  const [photosNumber, setPhotosNumber] = useState();
+  const [modal, toggleModal] = useContext(ApartmentsModalContext);
+
+  useEffect(() => {
+    setPhotosNumber(document.querySelectorAll(".img-cont").length);
+    window.addEventListener("resize", () => setActualPhoto(0));
+  }, []);
+
+  useEffect(() => {
+    document.querySelector(".img-slide").style.transition =
+      "transform 0.4s ease-in-out";
+    document.querySelector(".img-slide").style.transform = `translateX(${
+      -document.querySelector(".img-slide").clientWidth * actualPhoto
+    }px)`;
+  }, [actualPhoto]);
+
+  function toggleLeft() {
+    if (actualPhoto > 0) {
+      setActualPhoto(actualPhoto - 1);
+    }
+  }
+
+  function toggleRight() {
+    if (actualPhoto < photosNumber - 1) {
+      setActualPhoto(actualPhoto + 1);
+    }
+  }
+
+  function toggleApart() {
+    setActualPhoto(0);
+    document.querySelector(".container-slide").style.transition =
+      "transform 0.4s ease-in-out";
+    document.querySelector(
+      ".container-slide"
+    ).style.transform = `translateX(0px)`;
+  }
+
+  return (
+    <ApartmentDescContainer>
+      <div className='gallery-cont'>
+        <div className='img-slide'>
+          {data
+            .filter((obj) => {
+              if (obj.placement === "ap1gal") return obj;
+            })
+            .map((o) => {
+              return (
+                <div
+                  className='img-cont'
+                  onClick={() =>
+                    toggleModal({
+                      isToggle: true,
+                      gal: "ap1gal",
+                      photo: actualPhoto,
+                    })
+                  }
+                  style={{
+                    backgroundImage: "url(" + o.pic + ")",
+                  }}
+                ></div>
+              );
+            })}
+        </div>
+        <div className='go-back'>
+          <i
+            class='fas fa-arrow-left'
+            onClick={() => {
+              toggleApart();
+            }}
+          ></i>
+        </div>
+        <div className='direction'>
+          <i
+            class='fas fa-chevron-left'
+            onClick={() => {
+              toggleLeft();
+            }}
+          ></i>
+          <i
+            class='fas fa-chevron-right'
+            onClick={() => {
+              toggleRight();
+            }}
+          ></i>
+        </div>
+        <div className='img-number'>
+          <p>
+            {actualPhoto + 1}/{photosNumber}
+          </p>
+        </div>
+      </div>
+      <div className='desc-cont'>
+        <div className='title'>
+          <hr />
+          <div>
+            <h4>Stychlyn 47/1</h4>
+            <p>152m2</p>
+          </div>
+          <hr />
+        </div>
+        <div className='contact'>
+          <p>+48 213 742 069</p>
+        </div>
+        <div className='desc'>
+          <div className='item'>
+            <p>{"•"}</p>
+            <p>Pełne wyposażenie</p>
+          </div>
+          <div>
+            <p>{"•"}</p>
+            <p>Apartament dla 6-8 osób</p>
+          </div>
+          <div>
+            <p>{"•"}</p>
+            <p>1 sypialnia 1+1os</p>
+          </div>
+          <div>
+            <p>{"•"}</p>
+            <p>2 sypialnie 2os</p>
+          </div>
+          <div>
+            <p>{"•"}</p>
+            <p>2 łazienki</p>
+          </div>
+          <div>
+            <p>{"•"}</p>
+            <p>kuchnia</p>
+          </div>
+          <div>
+            <p>{"•"}</p>
+            <p>salon</p>
+          </div>
+          <div>
+            <p>{"•"}</p>
+            <p>garaż</p>
+          </div>
+          <div>
+            <p>{"•"}</p>
+            <p>sauna</p>
+          </div>
+        </div>
+        <div className='book'>
+          <hr />
+          <button>Rezerwuj</button>
+          <hr />
+        </div>
+      </div>
+    </ApartmentDescContainer>
+  );
+};
+
+export default ApartmentsInfo1;

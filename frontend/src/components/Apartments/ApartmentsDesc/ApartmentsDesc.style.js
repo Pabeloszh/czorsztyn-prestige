@@ -19,7 +19,6 @@ export const ApartmentDescContainer = styled.div`
       .img-cont {
         min-width: 100%;
         height: 100%;
-        background-image: url(${ap1Main});
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -45,13 +44,13 @@ export const ApartmentDescContainer = styled.div`
       padding: 0 50px;
       i {
         font-size: 50px;
-        color: #262525;
+        color: #fff;
       }
     }
     .img-number {
       position: absolute;
       bottom: 30px;
-      right: 50px;
+      right: 40px;
       p {
         color: #fff;
         font-size: 36px;
@@ -171,8 +170,8 @@ export const ApartmentDescContainer = styled.div`
         }
       }
       .img-number {
-        bottom: 30px;
-        right: 50px;
+        bottom: 20px;
+        right: 35px;
         p {
           font-size: 28px;
         }
@@ -232,8 +231,8 @@ export const ApartmentDescContainer = styled.div`
         }
       }
       .img-number {
-        bottom: 30px;
-        right: 50px;
+        bottom: 20px;
+        right: 35px;
         p {
           font-size: 18px;
         }
@@ -299,8 +298,8 @@ export const ApartmentDescContainer = styled.div`
         }
       }
       .img-number {
-        bottom: 30px;
-        right: 50px;
+        bottom: 15px;
+        right: 25px;
         p {
           font-size: 18px;
         }
