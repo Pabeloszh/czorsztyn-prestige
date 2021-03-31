@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import API from "./utils/API";
+import Loader from "./components/Loader/Loader";
 import Header from "./components/Header/Header";
 import MainContent from "./components/MainContent/MainContent";
 import Apartments from "./components/Apartments/Apartments";
@@ -45,7 +46,7 @@ const App = () => {
           <Contact />
         </Router>
       ) : (
-        <div>CHUJ</div>
+        <Loader />
       )}
     </>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { MainDataContext } from "../../../context/MainDataContext";
 import { ApartmentsContext } from "../../../context/ApartmentsContext";
 import { ApartmentsMainContainer } from "./ApartmentsMain.style";
@@ -7,22 +7,33 @@ import { useLocation } from "react-router-dom";
 const Apartments = () => {
   const [data, setData] = useContext(MainDataContext);
   const [apartment, toggleApartment] = useContext(ApartmentsContext);
+  const [winWidth, setWinWidth] = useState(window.innerWidth);
+  const [prevWinWidth, setPrevWinWidth] = useState(window.innerWidth);
+
   const location = useLocation();
 
-  function handleResize() {
-    if (document.querySelector(".container-slide")) {
+  useEffect(() => {
+    if (winWidth !== prevWinWidth) {
       document.querySelector(".container-slide").style.transition =
         "transform 0.4s ease-in-out";
       document.querySelector(
         ".container-slide"
       ).style.transform = `translateX(0px)`;
+      setPrevWinWidth(winWidth);
     }
-  }
+  }, [winWidth]);
 
   useEffect(() => {
-    if (location.pathname !== "/")
-      window.removeEventListener("resize", handleResize);
-    else window.addEventListener("resize", handleResize, false);
+    if (document.querySelector(".container-slide") && location.pathname !== "/")
+      window.removeEventListener("resize", () =>
+        setWinWidth(window.innerWidth)
+      );
+    else
+      window.addEventListener(
+        "resize",
+        () => setWinWidth(window.innerWidth),
+        false
+      );
   }, []);
 
   function toggleDesc(cond) {

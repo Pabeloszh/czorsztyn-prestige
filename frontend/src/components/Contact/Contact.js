@@ -1,6 +1,4 @@
 import React from "react";
-import logo from "../../img/logo.png";
-import nadczorsztynem from "../../img/nadczorsztynem.png";
 import { ContactContainer } from "./Contact.style";
 
 const Contact = () => {
@@ -17,18 +15,22 @@ const Contact = () => {
           <h5>Kontakt:</h5>
           <div>
             <div>
-              <i class='fas fa-phone-alt'></i> <p>+48 783 113 111</p>
+              <i class='fas fa-phone-alt'></i>{" "}
+              <a href='tel:+48783113111'>+48 783 113 111</a>
             </div>
             <div>
-              <i class='fas fa-envelope'></i> <p>biuro@nadczorsztynem.pl</p>
+              <i class='fas fa-envelope'></i>{" "}
+              <a href='mailto:biuro@nadczorsztynem.pl'>
+                biuro@nadczorsztynem.pl
+              </a>
             </div>
             <div>
               <i class='fas fa-map-marker-alt'></i>
-              <p>
+              <a href='https://www.google.pl/maps/place/Czorsztyn+Prestige/@49.4447416,20.285381,17z/data=!4m13!1m7!3m6!1s0x4715f8a386e7ae7f:0x8e476ab9460ef8f3!2sZa+Stylchyn+110,+34-440+Kluszkowce!3b1!8m2!3d49.4447381!4d20.2875697!3m4!1s0x4715f8a467e55e0f:0x7fdbe86aeb92fcd2!8m2!3d49.4444716!4d20.2882022'>
                 ul. Za Stylchyn 110
                 <br />
                 34-440 Kluszkowce
-              </p>
+              </a>
             </div>
           </div>
         </div>
@@ -46,12 +48,18 @@ const Contact = () => {
           <h5>Sprawdź również:</h5>
           <div>
             <div>
-              <i class='fab fa-facebook'></i>
-              <i class='fab fa-instagram'></i>
-              <img
-                src='https://czorsztyn-prestige-s3bucket.s3.eu-central-1.amazonaws.com/nadczorsztynem.4f0022ab.png'
-                alt=''
-              />
+              <a href='https://www.facebook.com/czorsztynprestige'>
+                <i class='fab fa-facebook'></i>
+              </a>
+              <a href='https://www.instagram.com/czorsztyn_prestige/'>
+                <i class='fab fa-instagram'></i>
+              </a>
+              <a href='https://nadczorsztynem.pl/'>
+                <img
+                  src='https://czorsztyn-prestige-s3bucket.s3.eu-central-1.amazonaws.com/nadczorsztynem.4f0022ab.png'
+                  alt=''
+                />
+              </a>
             </div>
           </div>
         </div>

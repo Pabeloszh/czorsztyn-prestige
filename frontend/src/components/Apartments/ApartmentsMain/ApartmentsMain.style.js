@@ -139,6 +139,7 @@ export const ApartmentsMainContainer = styled.div`
             color: #fff;
           }
           button {
+            transition: background-color 500ms ease-in-out;
             padding: 6px 24px;
             background-color: #ba9e6e;
             color: #fff;
@@ -147,6 +148,10 @@ export const ApartmentsMainContainer = styled.div`
             outline: none;
             margin-left: 15px;
             border-radius: 2px;
+          }
+          button:hover {
+            transition: background-color 500ms ease-in-out;
+            background-color: #836f4d;
           }
         }
       }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "../../../img/logo.png";
+import { useHistory } from "react-router-dom";
 import { NavbarContainer } from "./Navbar.style";
 import { Link, useLocation } from "react-router-dom";
 
@@ -7,10 +7,11 @@ const Navbar = ({ menu, toggleMenu }) => {
   const [navTop, setNavTop] = useState(window.scrollY);
   const [winWidth, setWinWidth] = useState(window.innerWidth);
   const location = useLocation();
+  const history = useHistory();
 
   useEffect(() => {
-    if (menu) document.querySelector("#nav-icon3").classList.add("open");
-    else document.querySelector("#nav-icon3").classList.remove("open");
+    if (menu) document.querySelector("#hamburger").classList.add("open");
+    else document.querySelector("#hamburger").classList.remove("open");
   }, [menu]);
 
   useEffect(() => {
@@ -63,7 +64,7 @@ const Navbar = ({ menu, toggleMenu }) => {
             toggleMenu(!menu);
           }}
         >
-          <div id='nav-icon3'>
+          <div id='hamburger'>
             <span></span>
             <span></span>
             <span></span>
@@ -72,20 +73,34 @@ const Navbar = ({ menu, toggleMenu }) => {
         </div>
       </div>
       <div className='nav'>
-        <div onClick={() => window.scrollTo(0, 0)}>
-          <Link to='/'>STRONA GŁÓWNA</Link>
+        <div
+          onClick={() => {
+            window.scrollTo(0, 0);
+            history.push("/");
+          }}
+        >
+          <a>STRONA GŁÓWNA</a>
         </div>
         <p>{"•"}</p>
-        <div>
-          <a href='https://czorsztynprestige.pl/rezerwacje/'>REZERWACJE</a>
-        </div>
+        <a href='https://czorsztynprestige.pl/rezerwacje/'>
+          <div>
+            <a>REZERWACJE</a>
+          </div>
+        </a>
         <p>{"•"}</p>
-        <div>
-          <a href=''>ATRAKCJE</a>
-        </div>
+        <a href='https://nadczorsztynem.pl/category/atrakcje/'>
+          <div>
+            <a>ATRAKCJE</a>
+          </div>
+        </a>
         <p>{"•"}</p>
-        <div onClick={() => window.scrollTo(0, 0)}>
-          <Link to='/gallery'>GALERIA</Link>
+        <div
+          onClick={() => {
+            window.scrollTo(0, 0);
+            history.push("/gallery");
+          }}
+        >
+          <a>GALERIA</a>
         </div>
         <p>{"•"}</p>
         <div onClick={() => window.scrollTo(0, document.body.scrollHeight)}>

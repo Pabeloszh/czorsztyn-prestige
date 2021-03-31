@@ -47,6 +47,9 @@ export const NavbarContainer = styled.div`
       font-size: 36px;
       animation: ${textAnim} 1500ms linear;
     }
+    a {
+      text-decoration: none;
+    }
     div {
       height: 65px;
       padding: 21.5px 0;
@@ -54,7 +57,7 @@ export const NavbarContainer = styled.div`
       position: relative;
       animation: ${textAnim} 1500ms linear;
       a {
-        color: white;
+        color: #fff;
         text-decoration: none;
         font-size: 16px;
         margin: 0 15px;
@@ -114,6 +117,21 @@ export const NavbarContainer = styled.div`
           color: #ba9e6e;
         }
       }
+      div:not(.active)::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background-color: transparent;
+        transition: transform 200ms ease-in-out;
+        transform: scaleX(0);
+      }
+      div:not(.active):hover::before,
+      div:not(.active):focus::before {
+        transform: scaleX(1);
+      }
     }
     .navbar-mobile {
       display: flex;
@@ -135,7 +153,7 @@ export const NavbarContainer = styled.div`
         }
       }
 
-      #nav-icon3 {
+      #hamburger {
         animation: ${textAnim} 1500ms linear;
         width: 40px;
         height: 35px;
@@ -180,27 +198,27 @@ export const NavbarContainer = styled.div`
         }
       }
 
-      #nav-icon3.open span:nth-child(1) {
+      #hamburger.open span:nth-child(1) {
         top: 18px;
         width: 0%;
         left: 50%;
       }
 
-      #nav-icon3.open span:nth-child(2) {
+      #hamburger.open span:nth-child(2) {
         -webkit-transform: rotate(45deg);
         -moz-transform: rotate(45deg);
         -o-transform: rotate(45deg);
         transform: rotate(45deg);
       }
 
-      #nav-icon3.open span:nth-child(3) {
+      #hamburger.open span:nth-child(3) {
         -webkit-transform: rotate(-45deg);
         -moz-transform: rotate(-45deg);
         -o-transform: rotate(-45deg);
         transform: rotate(-45deg);
       }
 
-      #nav-icon3.open span:nth-child(4) {
+      #hamburger.open span:nth-child(4) {
         top: 18px;
         width: 0%;
         left: 50%;
@@ -209,9 +227,10 @@ export const NavbarContainer = styled.div`
   }
   @media ${device.mobileM} {
     .navbar-mobile {
-      justify-content: flex-end;
       .logo-mobile {
-        display: none;
+        img {
+          height: 35px;
+        }
       }
     }
   }

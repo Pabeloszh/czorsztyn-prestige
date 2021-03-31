@@ -2,23 +2,43 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { MainDataContext } from "../../context/MainDataContext";
 import { SliderContainer } from "./Slider.style";
+import { useLocation } from "react-router-dom";
 
 const Slider = () => {
   const [data, setData] = useContext(MainDataContext);
   const [slide, setSlide] = useState(0);
   const [cooldown, setCooldown] = useState(false);
   const [last, isLast] = useState(false);
+  const [winWidth, setWinWidth] = useState(window.innerWidth);
+  const [prevWinWidth, setPrevWinWidth] = useState(window.innerWidth);
+
+  const location = useLocation();
 
   useEffect(() => {
-    window.addEventListener("resize", () => {
+    if (winWidth !== prevWinWidth) {
       const p = document.querySelectorAll(".nav-dots p");
-      setSlide(0);
 
       for (let i = 0; i < p.length; i++) {
         p[i].classList.remove("active");
         p[0].classList.add("active");
       }
-    });
+
+      setSlide(0);
+      setPrevWinWidth(winWidth);
+    }
+  }, [winWidth]);
+
+  useEffect(() => {
+    if (document.querySelector(".photo-slider") && location.pathname !== "/")
+      window.removeEventListener("resize", () =>
+        setWinWidth(window.innerWidth)
+      );
+    else
+      window.addEventListener(
+        "resize",
+        () => setWinWidth(window.innerWidth),
+        false
+      );
   }, []);
 
   useEffect(() => {

@@ -18,8 +18,12 @@ const MainContent = () => {
         <div className='line'>
           <hr />
         </div>
-        <i class='fab fa-facebook'></i>
-        <i class='fab fa-instagram'></i>
+        <a href='https://www.facebook.com/czorsztynprestige'>
+          <i class='fab fa-facebook'></i>
+        </a>
+        <a href='https://www.instagram.com/czorsztyn_prestige/'>
+          <i class='fab fa-instagram'></i>
+        </a>
       </div>
       <div className='title-container'>
         <h1>APARTAMENTY</h1>
@@ -31,8 +35,12 @@ const MainContent = () => {
         </h2>
       </div>
       <div className='scl-media-mobile'>
-        <i class='fab fa-facebook'></i>
-        <i class='fab fa-instagram'></i>
+        <a href='https://www.facebook.com/czorsztynprestige'>
+          <i class='fab fa-facebook'></i>
+        </a>
+        <a href='https://www.instagram.com/czorsztyn_prestige/'>
+          <i class='fab fa-instagram'></i>
+        </a>
       </div>
     </MainContainer>
   );

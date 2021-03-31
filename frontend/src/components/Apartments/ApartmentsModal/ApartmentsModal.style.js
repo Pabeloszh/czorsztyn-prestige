@@ -24,7 +24,7 @@ export const ModalContainer = styled.div`
     right: 20px;
     i {
       color: #fff;
-      font-size: 36px;
+      font-size: 32px;
     }
   }
   .nav {
@@ -39,7 +39,7 @@ export const ModalContainer = styled.div`
     justify-content: space-between;
     i {
       color: #fff;
-      font-size: 36px;
+      font-size: 42px;
     }
   }
   .modal-box {
@@ -57,30 +57,77 @@ export const ModalContainer = styled.div`
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 80%;
+      width: 75%;
     }
   }
 
-  @media ${device.laptop}{
-    .modal-box {
-      position: absolute;
-      z-index: 5;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      
-      width: 100%;
-      height: 100vh;
-      position: relative;
-      img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        max-width: 100%;
-        min-width:90vw;
-        max-height:95vh;
-        min-height:auto;
+  // @media ${device.laptop}{
+  //   .modal-box {
+  //     position: absolute;
+  //     z-index: 5;
+  //     top: 50%;
+  //     left: 50%;
+  //     transform: translate(-50%, -50%);
+
+  //     width: 100%;
+  //     height: 100vh;
+  //     position: relative;
+  //     img {
+  //       position: absolute;
+  //       top: 50%;
+  //       left: 50%;
+  //       transform: translate(-50%, -50%);
+  //       max-width: 100%;
+  //       min-width:90vw;
+  //       max-height:95vh;
+  //       min-height:auto;
+  //     }
+  // }
+  @media ${device.tablet} {
+    .close {
+      top: 15px;
+      right: 15px;
+      i {
+        font-size: 24px;
       }
+    }
+    .nav {
+      padding: 0 2.5%;
+      i {
+        font-size: 36px;
+      }
+    }
+    .modal-box {
+      padding: 2% 10%;
+      img {
+        width: 80%;
+      }
+    }
+  }
+  @media ${device.mobileL} {
+    .close {
+      top: 15px;
+      right: 15px;
+      i {
+        font-size: 24px;
+      }
+    }
+    .nav {
+      padding: 0;
+      i {
+        padding: 10px 10px 10px 5px;
+        font-size: 28px;
+        background-color: rgb(0, 0, 0, 0.5);
+      }
+      i:last-child {
+        padding: 10px 5px 10px 10px;
+      }
+    }
+    .modal-box {
+      padding: 2% 10%;
+      img {
+        width: 100%;
+      }
+    }
   }
 `;

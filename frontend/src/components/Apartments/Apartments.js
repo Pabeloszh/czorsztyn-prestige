@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import ApartmentsMain from "./ApartmentsMain/ApartmentsMain";
-import ApartmentsDesc from "./ApartmentsDesc/ApartmentsDesc";
+import ApartmentsDesc1 from "./ApartmentsDesc/ApartmentsDesc1";
+import ApartmentsDesc2 from "./ApartmentsDesc/ApartmentsDesc2";
+import { ApartmentsContext } from "../../context/ApartmentsContext";
 import { ApartmentsContainer } from "./Apartments.style";
 
 const Apartments = () => {
+  const [apartment, toggleApartment] = useContext(ApartmentsContext);
   return (
     <ApartmentsContainer>
       <div className='container-slide'>
         <ApartmentsMain />
-        <ApartmentsDesc />
+        <>{!apartment ? <ApartmentsDesc1 /> : <ApartmentsDesc2 />}</>
       </div>
     </ApartmentsContainer>
   );
