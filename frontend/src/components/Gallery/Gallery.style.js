@@ -4,7 +4,7 @@ import { device } from "../../utils/breakpoints";
 export const GalleryContainer = styled.div`
   width: 100%;
   padding: 60px 10% 60px calc(10% - 60px);
-  background-color: #ba9e6e;
+  background-color: #2a2929;
   display: grid;
   grid-template-columns: repeat(3, 33.3%);
   gap: 30px;
@@ -20,7 +20,7 @@ export const GalleryContainer = styled.div`
     grid-template-columns: repeat(2, 50%);
   }
   @media ${device.tablet} {
-    padding: 60px 10%;
+    padding: 125px 10% 60px 10%;
     grid-template-columns: 100%;
   }
   @media ${device.mobileL} {

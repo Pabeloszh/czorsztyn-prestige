@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import slider from "../../img/slider.png";
-import foto from "../../img/main-photo.png";
 import { device } from "../../utils/breakpoints";
 
 export const SliderContainer = styled.div`
@@ -31,7 +29,7 @@ export const SliderContainer = styled.div`
   .slider-info {
     width: 100%;
     position: absolute;
-    top: calc(50% - 5px);
+    top: calc(50% - 15px);
     left: 50%;
     transform: translate(-50%, -50%);
     h2 {
@@ -40,13 +38,14 @@ export const SliderContainer = styled.div`
       font-weight: 600;
       font-size: 50px;
       text-align: center;
-      margin-bottom: 35px;
+      margin-bottom: 15px;
     }
     div {
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 35px;
       hr {
         border: 2px solid #fff;
         width: 200px;
@@ -61,10 +60,11 @@ export const SliderContainer = styled.div`
       }
     }
     a {
-      display: flex;
+      margin: 0 calc(50% - 80px);
+      width: 160px;
+      // display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 30px;
       color: #ba9e6e;
       font-family: Open Sans;
       font-weight: 600;
@@ -81,6 +81,7 @@ export const SliderContainer = styled.div`
     display: flex;
     justify-content: center;
     p {
+      cursor: pointer;
       height: 60px;
       font-size: 80px;
       color: #ba9e6e;

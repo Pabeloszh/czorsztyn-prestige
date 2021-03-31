@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { device } from "../../../utils/breakpoints";
-import ap1Main from "../../../img/ap-1-main.png";
 
-export const ApartmentDescContainer = styled.div`
+export const ApartmentsDescContainer = styled.div`
   min-width: 100%;
   height: 700px;
   background-color: #262525;
@@ -41,7 +40,7 @@ export const ApartmentDescContainer = styled.div`
       transform: translate(-50%, -50%);
       display: flex;
       justify-content: space-between;
-      padding: 0 50px;
+      padding: 0 5%;
       i {
         font-size: 50px;
         color: #fff;
@@ -65,7 +64,6 @@ export const ApartmentDescContainer = styled.div`
     padding: 95px 0;
     .title {
       display: flex;
-      // justify-content: space-between;
       align-items: center;
       margin-bottom: 5px;
       hr {
@@ -105,11 +103,15 @@ export const ApartmentDescContainer = styled.div`
     }
     .contact {
       margin-bottom: 8px;
-      p {
+      a {
+        text-decoration: none;
         font-family: Open Sans;
         font-weight: 300;
         font-size: 18px;
-        color: rgba(255, 255, 255, 0.8);
+        color: #ffffffcc;
+      }
+      a:visited {
+        color: #ffffffcc;
       }
     }
     .desc {
@@ -145,7 +147,13 @@ export const ApartmentDescContainer = styled.div`
       hr:last-child {
         width: calc(100% - 115px - 45px - 60px);
       }
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
       button {
+        cursor: pointer;
+        transition: background-color 500ms ease-in-out;
         width: 115px;
         padding: 8px 24px;
         margin: 0 30px;
@@ -155,6 +163,10 @@ export const ApartmentDescContainer = styled.div`
         border: none;
         outline: none;
         border-radius: 2px;
+      }
+      button:hover {
+        transition: background-color 500ms ease-in-out;
+        background-color: #836f4d;
       }
     }
   }
@@ -192,7 +204,7 @@ export const ApartmentDescContainer = styled.div`
         }
       }
       .contact {
-        p {
+        a {
           font-size: 14px;
         }
       }
@@ -225,7 +237,7 @@ export const ApartmentDescContainer = styled.div`
     .gallery-cont {
       border-top: 2px #ba9e6e solid;
       .direction {
-        padding: 0 30px;
+        padding: 0 3%;
         i {
           font-size: 30px;
         }
@@ -235,6 +247,13 @@ export const ApartmentDescContainer = styled.div`
         right: 35px;
         p {
           font-size: 18px;
+        }
+      }
+      .go-back {
+        top: 15px;
+        left: 15px;
+        i {
+          font-size: 26px;
         }
       }
     }
@@ -256,7 +275,7 @@ export const ApartmentDescContainer = styled.div`
         }
       }
       .contact {
-        p {
+        a {
           font-size: 12px;
         }
       }
@@ -292,7 +311,7 @@ export const ApartmentDescContainer = styled.div`
     .gallery-cont {
       border-top: 2px #ba9e6e solid;
       .direction {
-        padding: 0 20px;
+        padding: 0 2%;
         i {
           font-size: 30px;
         }
@@ -302,6 +321,13 @@ export const ApartmentDescContainer = styled.div`
         right: 25px;
         p {
           font-size: 18px;
+        }
+      }
+      .go-back {
+        top: 15px;
+        left: 15px;
+        i {
+          font-size: 24px;
         }
       }
     }
@@ -327,7 +353,7 @@ export const ApartmentDescContainer = styled.div`
         }
       }
       .contact {
-        p {
+        a {
           font-size: 10px;
         }
       }

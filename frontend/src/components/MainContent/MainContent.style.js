@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import mainPhoto from "../../img/main-photo.png";
 import { device } from "../../utils/breakpoints";
 
 const socialMedia = keyframes`
@@ -19,7 +18,7 @@ export const MainContainer = styled.div`
   width: 100%;
   height: calc(100vh - 185px);
   position: relative;
-  z-index: -1;
+  z-index: 1;
   background-image: url(${(props) => props.data});
   background-repeat: no-repeat;
   background-size: cover;
@@ -53,10 +52,13 @@ export const MainContainer = styled.div`
         width: 80px;
       }
     }
-    i {
-      transform: rotate(-90deg);
-      font-size: 25px;
-      color: #ffffff;
+    a{
+      cursor:pointer;
+      i {
+        transform: rotate(-90deg);
+        font-size: 25px;
+        color: #ffffff;
+      }
     }
   }
   .title-container {

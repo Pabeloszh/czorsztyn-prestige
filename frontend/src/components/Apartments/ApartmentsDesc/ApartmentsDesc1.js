@@ -1,17 +1,42 @@
 import React, { useState, useEffect, useContext } from "react";
-import { MainDataContext } from "../../../../context/MainDataContext";
-import { ApartmentDescContainer } from "../ApartmentsDesc.style";
-import { ApartmentsModalContext } from "../../../../context/ApartmentsModalContext";
+import { MainDataContext } from "../../../context/MainDataContext";
+import { ApartmentsDescContainer } from "./ApartmentsDesc.style";
+import { ApartmentsModalContext } from "../../../context/ApartmentsModalContext";
+import { useLocation } from "react-router-dom";
 
-const ApartmentsInfo1 = () => {
+const ApartmentsDesc1 = () => {
   const [data, setData] = useContext(MainDataContext);
+  const [modal, toggleModal] = useContext(ApartmentsModalContext);
   const [actualPhoto, setActualPhoto] = useState(0);
   const [photosNumber, setPhotosNumber] = useState();
-  const [modal, toggleModal] = useContext(ApartmentsModalContext);
+  const [winWidth, setWinWidth] = useState(window.innerWidth);
+  const [prevWinWidth, setPrevWinWidth] = useState(window.innerWidth);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (winWidth !== prevWinWidth) {
+      document.querySelector(".img-slide").style.transition =
+        "transform 0.4s ease-in-out";
+      document.querySelector(".img-slide").style.transform = `translateX(0px)`;
+      setActualPhoto(0);
+      setPrevWinWidth(winWidth);
+    }
+  }, [winWidth]);
 
   useEffect(() => {
     setPhotosNumber(document.querySelectorAll(".img-cont").length);
-    window.addEventListener("resize", () => setActualPhoto(0));
+    setActualPhoto(0);
+    if (document.querySelector(".img-slide") && location.pathname !== "/")
+      window.removeEventListener("resize", () =>
+        setWinWidth(window.innerWidth)
+      );
+    else
+      window.addEventListener(
+        "resize",
+        () => setWinWidth(window.innerWidth),
+        false
+      );
   }, []);
 
   useEffect(() => {
@@ -44,7 +69,7 @@ const ApartmentsInfo1 = () => {
   }
 
   return (
-    <ApartmentDescContainer>
+    <ApartmentsDescContainer>
       <div className='gallery-cont'>
         <div className='img-slide'>
           {data
@@ -107,7 +132,7 @@ const ApartmentsInfo1 = () => {
           <hr />
         </div>
         <div className='contact'>
-          <p>+48 213 742 069</p>
+          <a href='tel:+48213742069'>+48 213 742 069</a>
         </div>
         <div className='desc'>
           <div className='item'>
@@ -149,12 +174,14 @@ const ApartmentsInfo1 = () => {
         </div>
         <div className='book'>
           <hr />
-          <button>Rezerwuj</button>
+          <a href='https://czorsztynprestige.pl/rezerwacje/'>
+            <button>Rezerwuj</button>
+          </a>
           <hr />
         </div>
       </div>
-    </ApartmentDescContainer>
+    </ApartmentsDescContainer>
   );
 };
 
-export default ApartmentsInfo1;
+export default ApartmentsDesc1;
