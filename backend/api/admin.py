@@ -1,8 +1,5 @@
 from django.contrib import admin
 from .models import ApartmentsPics
-# Register your models here.
-
-
 
 @admin.register(ApartmentsPics)
 class ApartmentAdmin(admin.ModelAdmin):
