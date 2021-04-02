@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
+import { ApartmentsContext } from "../../../context/ApartmentsContext";
 import ApartmentsMain from "./ApartmentsMain/ApartmentsMain";
 import ApartmentsDesc1 from "./ApartmentsDesc/ApartmentsDesc1";
 import ApartmentsDesc2 from "./ApartmentsDesc/ApartmentsDesc2";
-import { ApartmentsContext } from "../../context/ApartmentsContext";
 import { ApartmentsContainer } from "./Apartments.style";
 
 const Apartments = () => {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { MainDataContext } from "../../context/MainDataContext";
+import { MainDataContext } from "../../../context/MainDataContext";
 import { SliderContainer } from "./Slider.style";
 import { useLocation } from "react-router-dom";
 
@@ -99,13 +99,14 @@ const Slider = () => {
             .filter((obj) => {
               if (obj.placement === "slider") return obj;
             })
-            .map((o) => {
+            .map((o, index) => {
               return (
                 <div
                   className='photo'
                   style={{
                     backgroundImage: "url(" + o.pic + ")",
                   }}
+                  key={index}
                 ></div>
               );
             })}
@@ -126,18 +127,17 @@ const Slider = () => {
           <div>
             <hr />
             <h4>
-              Bacon ipsum dolor amet alcatra chicken leberkas, pancetta swine
-              sausage beef ribs burgdoggen prosciutto meatloaf chislic boudin
-              turducken. Beef leberkas landjaeger, chislic sausage frankfurter
-              tongue pastrami. Meatball ribeye alcatra sausage chicken strip
-              steak. Tail strip steak drumstick short ribs sirloin, shoulder
-              bacon landjaeger doner brisket alcatra fatback ball tip beef ribs.
+              Zrobiliśmy wszystko, aby nasze apartamenty pozwalały cieszyć się
+              przepięknymi widokami oraz klimatem okolicy. Poznaj nasz bliżej-
+              zapraszamy do galerii zdjęć!
             </h4>
             <hr />
           </div>
-          <Link to='/gallery' onClick={() => window.scrollTo(0, 0)}>
-            Przejdź do galerii
-          </Link>
+          <div className='link'>
+            <Link to='/gallery' onClick={() => window.scrollTo(0, 0)}>
+              Przejdź do galerii
+            </Link>
+          </div>
         </div>
       </div>
       <div className='nav-dots'>

@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { MainDataContext } from "../../../context/MainDataContext";
-import { ModalContainer } from "../../Apartments/ApartmentsModal/ApartmentsModal.style";
-import { GalleryModalContext } from "../../../context/GalleryModalContext";
+import { GalleryDataContext } from "../../../../context/GalleryDataContext";
+import { GalleryModalContext } from "../../../../context/GalleryModalContext";
+import { ModalContainer } from "../../../HomepageWrapper/Apartments/ApartmentsModal/ApartmentsModal.style";
 
 const GalleryModal = () => {
-  const [data, setData] = useContext(MainDataContext);
+  const [gallData, setGallData] = useContext(GalleryDataContext);
   const [galModal, toggleGalModal] = useContext(GalleryModalContext);
 
   function toggleLeft() {
@@ -13,13 +13,13 @@ const GalleryModal = () => {
     } else {
       toggleGalModal({
         ...galModal,
-        photo: data.length - 1,
+        photo: gallData.length - 1,
       });
     }
   }
 
   function toggleRight() {
-    if (galModal.photo < data.length - 1) {
+    if (galModal.photo < gallData.length - 1) {
       toggleGalModal({ ...galModal, photo: galModal.photo + 1 });
     } else {
       toggleGalModal({ ...galModal, photo: 0 });
@@ -37,7 +37,7 @@ const GalleryModal = () => {
         <i class='fas fa-chevron-right' onClick={() => toggleRight()}></i>
       </div>
       <div className='modal-box'>
-        <img src={data[galModal.photo].pic} alt='' />
+        <img src={gallData[galModal.photo].pic} alt='' />
       </div>
     </ModalContainer>
   );

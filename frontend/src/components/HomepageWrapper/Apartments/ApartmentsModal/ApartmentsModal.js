@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { MainDataContext } from "../../../context/MainDataContext";
+import { MainDataContext } from "../../../../context/MainDataContext";
+import { ApartmentsModalContext } from "../../../../context/ApartmentsModalContext";
 import { ModalContainer } from "./ApartmentsModal.style";
-import { ApartmentsModalContext } from "../../../context/ApartmentsModalContext";
 
 const ApartmentsModal = () => {
   const [data, setData] = useContext(MainDataContext);

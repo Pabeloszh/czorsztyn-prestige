@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "../../../utils/breakpoints";
+import { device } from "../../../../utils/breakpoints";
 
 export const ApartmentsMainContainer = styled.div`
   position: relative;
