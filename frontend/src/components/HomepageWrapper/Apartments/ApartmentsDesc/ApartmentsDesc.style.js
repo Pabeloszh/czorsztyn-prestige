@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "../../../utils/breakpoints";
+import { device } from "../../../../utils/breakpoints";
 
 export const ApartmentsDescContainer = styled.div`
   min-width: 100%;
@@ -32,19 +32,22 @@ export const ApartmentsDescContainer = styled.div`
         color: #fff;
       }
     }
-    .direction {
-      width: 100%;
+    .fa-chevron-left,
+    .fa-chevron-right {
       position: absolute;
+      padding: 10px;
+      font-size: 50px;
+      color: #fff;
+    }
+    .fa-chevron-left {
       top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      justify-content: space-between;
-      padding: 0 5%;
-      i {
-        font-size: 50px;
-        color: #fff;
-      }
+      left: 5%;
+      transform: translateY(-50%);
+    }
+    .fa-chevron-right {
+      top: 50%;
+      right: 5%;
+      transform: translateY(-50%);
     }
     .img-number {
       position: absolute;
@@ -176,10 +179,16 @@ export const ApartmentsDescContainer = styled.div`
     grid-template-rows: 400px 600px;
     .gallery-cont {
       border-top: 4px #ba9e6e solid;
-      .direction {
-        i {
-          font-size: 40px;
-        }
+      .fa-chevron-left,
+      .fa-chevron-right {
+        font-size: 40px;
+      }
+      .fa-chevron-left {
+        left: 3%;
+      }
+      .fa-chevron-right {
+        top: 50%;
+        right: 3%;
       }
       .img-number {
         bottom: 20px;
@@ -236,11 +245,16 @@ export const ApartmentsDescContainer = styled.div`
     grid-template-rows: 350px 450px;
     .gallery-cont {
       border-top: 2px #ba9e6e solid;
-      .direction {
-        padding: 0 3%;
-        i {
-          font-size: 30px;
-        }
+      .fa-chevron-left,
+      .fa-chevron-right {
+        font-size: 30px;
+      }
+      .fa-chevron-left {
+        left: 2%;
+      }
+      .fa-chevron-right {
+        top: 50%;
+        right: 2%;
       }
       .img-number {
         bottom: 20px;
@@ -310,11 +324,12 @@ export const ApartmentsDescContainer = styled.div`
     grid-template-rows: 250px 375px;
     .gallery-cont {
       border-top: 2px #ba9e6e solid;
-      .direction {
-        padding: 0 2%;
-        i {
-          font-size: 30px;
-        }
+      .fa-chevron-left {
+        left: 1%;
+      }
+      .fa-chevron-right {
+        top: 50%;
+        right: 1%;
       }
       .img-number {
         bottom: 15px;

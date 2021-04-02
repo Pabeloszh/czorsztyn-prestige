@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { NavbarContainer } from "./Navbar.style";
-import { Link, useLocation } from "react-router-dom";
 
 const Navbar = ({ menu, toggleMenu }) => {
   const [navTop, setNavTop] = useState(window.scrollY);

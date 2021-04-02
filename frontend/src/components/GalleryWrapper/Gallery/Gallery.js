@@ -1,12 +1,12 @@
 import React, { useContext, useEffect } from "react";
-import API from "../../utils/API";
-import { GalleryContainer } from "./Gallery.style";
-import { MainDataContext } from "../../context/MainDataContext";
 import { useLocation } from "react-router-dom";
-import { GalleryModalContext } from "../../context/GalleryModalContext";
+import API from "../../../API/API";
+import { GalleryDataContext } from "../../../context/GalleryDataContext";
+import { GalleryModalContext } from "../../../context/GalleryModalContext";
+import { GalleryContainer } from "./Gallery.style";
 
 const Gallery = () => {
-  const [gallData, setGallData] = useContext(MainDataContext);
+  const [gallData, setGallData] = useContext(GalleryDataContext);
   const [galModal, toggleGalModal] = useContext(GalleryModalContext);
   const location = useLocation();
 
@@ -28,7 +28,7 @@ const Gallery = () => {
 
   useEffect(() => {
     (async () => {
-      const res = await API.getAll();
+      const res = await API.getGallery();
       setGallData(res.data);
     })();
   }, []);

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "../../utils/breakpoints";
+import { device } from "../../../utils/breakpoints";
 
 export const SliderContainer = styled.div`
   width: 100%;
@@ -59,18 +59,21 @@ export const SliderContainer = styled.div`
         text-align: center;
       }
     }
-    a {
-      margin: 0 calc(50% - 80px);
-      width: 160px;
-      // display: flex;
+    .link {
+      width: 100%;
+      display: flex;
       justify-content: center;
       align-items: center;
-      color: #ba9e6e;
-      font-family: Open Sans;
-      font-weight: 600;
-      font-size: 20px;
-      text-align: center;
-      text-decoration-line: underline;
+      margin-top: 30px;
+      margin-bottom: 0;
+      a {
+        color: #ba9e6e;
+        font-family: Open Sans;
+        font-weight: 600;
+        font-size: 20px;
+        text-align: center;
+        text-decoration-line: underline;
+      }
     }
   }
   .nav-dots {
@@ -105,7 +108,6 @@ export const SliderContainer = styled.div`
         font-weight: 600;
         font-size: 36px;
         text-align: center;
-        margin-bottom: 35px;
       }
       div {
         width: 100%;
@@ -126,9 +128,6 @@ export const SliderContainer = styled.div`
       top: calc(50% - 5px);
       left: 50%;
       transform: translate(-50%, -50%);
-      h2 {
-        margin-bottom: 35px;
-      }
       div {
         width: 100%;
         display: flex;
@@ -142,9 +141,10 @@ export const SliderContainer = styled.div`
           font-size: 18px;
         }
       }
-      a {
-        margin-top: 30px;
-        font-size: 18px;
+      .link {
+        a {
+          font-size: 18px;
+        }
       }
     }
     .nav-dots {
@@ -164,7 +164,6 @@ export const SliderContainer = styled.div`
       transform: translate(-50%, -50%);
       h2 {
         font-size: 28px;
-        margin-bottom: 35px;
       }
       div {
         width: 100%;
@@ -179,9 +178,10 @@ export const SliderContainer = styled.div`
           font-size: 16px;
         }
       }
-      a {
-        margin-top: 30px;
-        font-size: 16px;
+      .link {
+        a {
+          font-size: 16px;
+        }
       }
     }
     .nav-dots {
@@ -201,7 +201,6 @@ export const SliderContainer = styled.div`
       transform: translate(-50%, -50%);
       h2 {
         font-size: 24px;
-        margin-bottom: 15px;
       }
       div {
         width: 100%;
@@ -216,9 +215,11 @@ export const SliderContainer = styled.div`
           font-size: 12px;
         }
       }
-      a {
+      .link {
         margin-top: 20px;
-        font-size: 12px;
+        a {
+          font-size: 12px;
+        }
       }
     }
     .nav-dots {

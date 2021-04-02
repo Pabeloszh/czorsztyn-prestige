@@ -4,7 +4,7 @@ import { LoaderContainer } from "./Loader.style";
 const Loader = () => {
   return (
     <LoaderContainer>
-      <div class='lds-ring'>
+      <div className='lds-ring'>
         <div></div>
         <div></div>
         <div></div>

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
-import { MainDataContext } from "../../../context/MainDataContext";
-import { ApartmentsDescContainer } from "./ApartmentsDesc.style";
-import { ApartmentsModalContext } from "../../../context/ApartmentsModalContext";
 import { useLocation } from "react-router-dom";
+import { MainDataContext } from "../../../../context/MainDataContext";
+import { ApartmentsModalContext } from "../../../../context/ApartmentsModalContext";
+import { ApartmentsDescContainer } from "./ApartmentsDesc.style";
 
 const ApartmentsInfo2 = () => {
   const [data, setData] = useContext(MainDataContext);
@@ -76,7 +76,7 @@ const ApartmentsInfo2 = () => {
             .filter((obj) => {
               if (obj.placement === "ap2gal") return obj;
             })
-            .map((o) => {
+            .map((o, index) => {
               return (
                 <div
                   className='img-cont'
@@ -90,32 +90,31 @@ const ApartmentsInfo2 = () => {
                   style={{
                     backgroundImage: "url(" + o.pic + ")",
                   }}
+                  key={index}
                 ></div>
               );
             })}
         </div>
         <div className='go-back'>
           <i
-            class='fas fa-arrow-left'
+            className='fas fa-arrow-left'
             onClick={() => {
               toggleApart();
             }}
           ></i>
         </div>
-        <div className='direction'>
-          <i
-            class='fas fa-chevron-left'
-            onClick={() => {
-              toggleLeft();
-            }}
-          ></i>
-          <i
-            class='fas fa-chevron-right'
-            onClick={() => {
-              toggleRight();
-            }}
-          ></i>
-        </div>
+        <i
+          className='fas fa-chevron-left'
+          onClick={() => {
+            toggleLeft();
+          }}
+        ></i>
+        <i
+          className='fas fa-chevron-right'
+          onClick={() => {
+            toggleRight();
+          }}
+        ></i>
         <div className='img-number'>
           <p>
             {actualPhoto + 1}/{photosNumber}
@@ -127,18 +126,14 @@ const ApartmentsInfo2 = () => {
           <hr />
           <div>
             <h4>Stychlyn 47/2</h4>
-            <p>142m2</p>
+            <p>160m2</p>
           </div>
           <hr />
         </div>
         <div className='contact'>
-          <a href='tel:+48213742069'>+48 213 742 069</a>
+          <a href='tel:+48213742069'>+48 602 257 284</a>
         </div>
         <div className='desc'>
-          <div className='item'>
-            <p>{"•"}</p>
-            <p>Pełne wyposażenie</p>
-          </div>
           <div>
             <p>{"•"}</p>
             <p>Apartament dla 6-8 osób</p>

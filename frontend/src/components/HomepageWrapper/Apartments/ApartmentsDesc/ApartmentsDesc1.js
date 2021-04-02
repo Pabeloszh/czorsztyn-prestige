@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
-import { MainDataContext } from "../../../context/MainDataContext";
-import { ApartmentsDescContainer } from "./ApartmentsDesc.style";
-import { ApartmentsModalContext } from "../../../context/ApartmentsModalContext";
 import { useLocation } from "react-router-dom";
+import { MainDataContext } from "../../../../context/MainDataContext";
+import { ApartmentsModalContext } from "../../../../context/ApartmentsModalContext";
+import { ApartmentsDescContainer } from "./ApartmentsDesc.style";
 
 const ApartmentsDesc1 = () => {
   const [data, setData] = useContext(MainDataContext);
@@ -76,7 +76,7 @@ const ApartmentsDesc1 = () => {
             .filter((obj) => {
               if (obj.placement === "ap1gal") return obj;
             })
-            .map((o) => {
+            .map((o, index) => {
               return (
                 <div
                   className='img-cont'
@@ -90,32 +90,31 @@ const ApartmentsDesc1 = () => {
                   style={{
                     backgroundImage: "url(" + o.pic + ")",
                   }}
+                  key={index}
                 ></div>
               );
             })}
         </div>
         <div className='go-back'>
           <i
-            class='fas fa-arrow-left'
+            className='fas fa-arrow-left'
             onClick={() => {
               toggleApart();
             }}
           ></i>
         </div>
-        <div className='direction'>
-          <i
-            class='fas fa-chevron-left'
-            onClick={() => {
-              toggleLeft();
-            }}
-          ></i>
-          <i
-            class='fas fa-chevron-right'
-            onClick={() => {
-              toggleRight();
-            }}
-          ></i>
-        </div>
+        <i
+          className='fas fa-chevron-left'
+          onClick={() => {
+            toggleLeft();
+          }}
+        ></i>
+        <i
+          className='fas fa-chevron-right'
+          onClick={() => {
+            toggleRight();
+          }}
+        ></i>
         <div className='img-number'>
           <p>
             {actualPhoto + 1}/{photosNumber}
@@ -126,50 +125,47 @@ const ApartmentsDesc1 = () => {
         <div className='title'>
           <hr />
           <div>
-            <h4>Stychlyn 47/1</h4>
-            <p>152m2</p>
+            <h4>Stychlyn 112/1</h4>
+            <p>120m2</p>
           </div>
           <hr />
         </div>
         <div className='contact'>
-          <a href='tel:+48213742069'>+48 213 742 069</a>
+          <a href='tel:+48213742069'>+48 602 257 284</a>
         </div>
         <div className='desc'>
-          <div className='item'>
+          <div>
             <p>{"•"}</p>
-            <p>Pełne wyposażenie</p>
+            <p>
+              Dwie sypialnie (łóżko 2-os i dwa 1-os.) z widokiem na jezioro oraz
+              wyjściem na taras
+            </p>
           </div>
           <div>
             <p>{"•"}</p>
-            <p>Apartament dla 6-8 osób</p>
+            <p>
+              Salon z rozkładaną kanapą, telewizorem, telewizją satelitarną i
+              wyjściem na taras{" "}
+            </p>
           </div>
           <div>
             <p>{"•"}</p>
-            <p>1 sypialnia 1+1os</p>
+            <p>
+              Aneks kuchenny z jadalnią i pełnym wyposażeniem AGD oraz ekspresem
+              do kawy i zmywarką
+            </p>
           </div>
           <div>
             <p>{"•"}</p>
-            <p>2 sypialnie 2os</p>
+            <p>Łazienka z sauną, wanną, prysznicem i toaletą </p>
           </div>
           <div>
             <p>{"•"}</p>
-            <p>2 łazienki</p>
+            <p>Druga, osobna toaleta </p>
           </div>
           <div>
             <p>{"•"}</p>
-            <p>kuchnia</p>
-          </div>
-          <div>
-            <p>{"•"}</p>
-            <p>salon</p>
-          </div>
-          <div>
-            <p>{"•"}</p>
-            <p>garaż</p>
-          </div>
-          <div>
-            <p>{"•"}</p>
-            <p>sauna</p>
+            <p>Szybkie WiFi</p>
           </div>
         </div>
         <div className='book'>

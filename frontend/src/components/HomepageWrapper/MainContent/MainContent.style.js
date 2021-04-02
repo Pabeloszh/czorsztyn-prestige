@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { device } from "../../utils/breakpoints";
+import { device } from "../../../utils/breakpoints";
 
 const socialMedia = keyframes`
   0%{

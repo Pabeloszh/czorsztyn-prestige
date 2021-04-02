@@ -1,14 +1,22 @@
 import React, { useState, useEffect, useContext } from "react";
-import { MainDataContext } from "../../../context/MainDataContext";
-import { ApartmentsContext } from "../../../context/ApartmentsContext";
-import { ApartmentsMainContainer } from "./ApartmentsMain.style";
 import { useLocation } from "react-router-dom";
+import API from "../../../../API/API";
+import { MainDataContext } from "../../../../context/MainDataContext";
+import { ApartmentsContext } from "../../../../context/ApartmentsContext";
+import { ApartmentsMainContainer } from "./ApartmentsMain.style";
 
 const Apartments = () => {
   const [data, setData] = useContext(MainDataContext);
   const [apartment, toggleApartment] = useContext(ApartmentsContext);
   const [winWidth, setWinWidth] = useState(window.innerWidth);
   const [prevWinWidth, setPrevWinWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    (async () => {
+      const res = await API.getAll();
+      setData(res.data);
+    })();
+  }, []);
 
   const location = useLocation();
 
@@ -81,27 +89,28 @@ const Apartments = () => {
           <div className='data-box'>
             <div className='ap-title'>
               <hr />
-              <h4>Stychlyn 47/1</h4>
+              <h4>Stychlyn 112/1</h4>
             </div>
             <div className='icons'>
               <p>
-                8<i class='fas fa-user'></i>
+                6<i className='fas fa-user'></i>
               </p>
               <p>
-                2<i class='fas fa-toilet'></i>
+                2<i className='fas fa-toilet'></i>
               </p>
             </div>
           </div>
           <div className='info-box'>
             <div className='ap-title'>
               <hr />
-              <h4>Stychlyn 47/1</h4>
+              <h4>Stychlyn 112/1</h4>
             </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Apartament z dwoma oddzielnymi sypialniami, salonem, sauną,
+              tarasem i ogrodem. Posiada aneks kuchenny oraz dwie łazienki.
+              Oprócz standardowego wyposażenia do dyspozycji gości są 2 rowery
+              oraz darmowe miejsce parkingowe. Istnieje możliwość przyjazdu z
+              małym pupilem, jednak po wcześniejszym uzgodnieniu.
             </p>
             <div className='ap-buttons'>
               <a href='http://www.bankfoto.pl/cz2a/'>SpacerVR</a>
@@ -113,27 +122,28 @@ const Apartments = () => {
           <div className='data-box'>
             <div className='ap-title'>
               <hr />
-              <h4>Stychlyn 47/2</h4>
+              <h4>Stychlyn 112/2</h4>
             </div>
             <div className='icons'>
               <p>
-                6<i class='fas fa-user'></i>
+                8<i className='fas fa-user'></i>
               </p>
               <p>
-                2<i class='fas fa-toilet'></i>
+                2<i className='fas fa-toilet'></i>
               </p>
             </div>
           </div>
           <div className='info-box'>
             <div className='ap-title'>
               <hr />
-              <h4>Stychlyn 47/2</h4>
+              <h4>Stychlyn 112/2</h4>
             </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Apartament z trzema oddzielnymi sypialniami, przestronnym salonem,
+              sauną i balkonem. Posiada aneks kuchenny oraz dwie łazienki.
+              Oprócz standardowego wyposażenia do dyspozycji gości są 4 rowery
+              oraz darmowe miejsce parkingowe. Istnieje możliwość przyjazdu z
+              małym pupilem, jednak po wcześniejszym uzgodnieniu
             </p>
             <div className='ap-buttons'>
               <a href='https://www.bankfoto.pl/cz2b/'>SpacerVR</a>
