@@ -133,28 +133,31 @@ const ApartmentsDesc1 = () => {
           <hr />
         </div>
         <div className='contact'>
-          <a href='tel:+48602257284'>+48 602 257 284</a>
+          <a href='tel:+48602257284'></a>
         </div>
         <div className='desc'>
           <div>
             <p>{"•"}</p>
             <p>
-              Dwie sypialnie (łóżko 2-os i dwa 1-os.) z widokiem na jezioro oraz
-              wyjściem na taras
+              Dwie sypialnie (łóżko 2-os i dwa 1-os. + 2 miejsca sofa salon)
             </p>
           </div>
           <div>
             <p>{"•"}</p>
             <p>
-              Salon z rozkładaną kanapą, telewizorem, telewizją satelitarną i
-              wyjściem na taras{" "}
+              Salon z wyjściem na taras, rozkładaną dużą sofą, i przepięknym widokiem na zalew Czorsztyński{" "}
             </p>
           </div>
           <div>
             <p>{"•"}</p>
             <p>
-              Aneks kuchenny z jadalnią i pełnym wyposażeniem AGD oraz ekspresem
-              do kawy i zmywarką
+            Aneks kuchenny z kompletnym wyposażeniem + ekspres do kawy
+            </p>
+          </div>
+          <div>
+            <p>{"•"}</p>
+            <p>
+            Jadalnia z dużym stołem + 6 krzeseł
             </p>
           </div>
           <div>
@@ -167,7 +170,17 @@ const ApartmentsDesc1 = () => {
           </div>
           <div>
             <p>{"•"}</p>
-            <p>Szybkie WiFi</p>
+            <p>
+              Garaż{" "}
+            </p>
+          </div>
+          <div>
+            <p>{"•"}</p>
+            <p>Ponadto łóżeczko dla dziecka, szybkie Wi-Fi, sprzęt do prasowania, pralka oraz sprzęt wypoczynkowy na tarasie</p>
+          </div>
+          <div>
+            <p>{"•"}</p>
+            <p>Do apartamentu przynależą 2 miejsca parkingowe zewnętrzne</p>
           </div>
         </div>
         <div className='book'>

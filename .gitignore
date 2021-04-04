@@ -4,4 +4,3 @@ venv
 static
 requirements.txt
 *pyc
-.env
