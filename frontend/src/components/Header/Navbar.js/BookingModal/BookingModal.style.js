@@ -60,6 +60,7 @@ export const BModalContainer = styled.div`
       }
     }
     div {
+      padding-left: 18px;
       a,
       a:visited {
         color: #fff;
