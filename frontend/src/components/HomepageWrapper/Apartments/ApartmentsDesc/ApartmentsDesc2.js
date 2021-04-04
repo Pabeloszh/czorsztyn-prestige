@@ -2,11 +2,13 @@ import React, { useState, useEffect, useContext } from "react";
 import { useLocation } from "react-router-dom";
 import { MainDataContext } from "../../../../context/MainDataContext";
 import { ApartmentsModalContext } from "../../../../context/ApartmentsModalContext";
+import { BookingModalContext } from "../../../../context/BookingModalContext";
 import { ApartmentsDescContainer } from "./ApartmentsDesc.style";
 
 const ApartmentsInfo2 = () => {
   const [data, setData] = useContext(MainDataContext);
   const [modal, toggleModal] = useContext(ApartmentsModalContext);
+  const [bModal, toggleBModal] = useContext(BookingModalContext);
   const [actualPhoto, setActualPhoto] = useState(0);
   const [photosNumber, setPhotosNumber] = useState();
   const [winWidth, setWinWidth] = useState(window.innerWidth);
@@ -125,13 +127,13 @@ const ApartmentsInfo2 = () => {
         <div className='title'>
           <hr />
           <div>
-            <h4>Stychlyn 47/2</h4>
+            <h4>Stychlyn 112/2</h4>
             <p>160m2</p>
           </div>
           <hr />
         </div>
         <div className='contact'>
-          <a href='tel:+48213742069'>+48 602 257 284</a>
+          <a href='tel:+48602257284'>+48 602 257 284</a>
         </div>
         <div className='desc'>
           <div>
@@ -169,9 +171,7 @@ const ApartmentsInfo2 = () => {
         </div>
         <div className='book'>
           <hr />
-          <a href='https://czorsztynprestige.pl/rezerwacje/'>
-            <button>Rezerwuj</button>
-          </a>
+          <button onClick={() => toggleBModal(true)}>Rezerwuj</button>
           <hr />
         </div>
       </div>
