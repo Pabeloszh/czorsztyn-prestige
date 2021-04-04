@@ -77,10 +77,10 @@ export const ApartmentsDescContainer = styled.div`
         width: 45px;
       }
       hr:last-child {
-        width: calc(100% - 224px - 45px - 60px);
+        width: calc(100% - 260px - 65px);
       }
       div {
-        width: 224px;
+        width: 260px;
         display: flex;
         justif-content: start;
         align-items: flex-end;
@@ -210,6 +210,9 @@ export const ApartmentsDescContainer = styled.div`
           p {
             font-size: 14px;
           }
+        }
+        hr:last-child {
+          width: calc(100% - 220px);
         }
       }
       .contact {

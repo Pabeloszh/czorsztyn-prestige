@@ -2,10 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createGlobalStyle } from "styled-components";
 import { MainDataProvider } from "./context/MainDataContext";
-import { ApartmentsProvider } from "./context/ApartmentsContext";
+import { GalleryDataProvider } from "./context/GalleryDataContext";
+import { BookingModalProvider } from "./context/BookingModalContext";
 import { ApartmentsModalProvider } from "./context/ApartmentsModalContext";
 import { GalleryModalProvider } from "./context/GalleryModalContext";
-import { GalleryDataProvider } from "./context/GalleryDataContext";
+import { ApartmentsProvider } from "./context/ApartmentsContext";
 import App from "./App";
 
 const GlobalStyle = createGlobalStyle`
@@ -23,16 +24,18 @@ const GlobalStyle = createGlobalStyle`
 ReactDOM.render(
   <MainDataProvider>
     <GalleryDataProvider>
-      <ApartmentsModalProvider>
-        <GalleryModalProvider>
-          <ApartmentsProvider>
-            <React.StrictMode>
-              <GlobalStyle />
-              <App />
-            </React.StrictMode>
-          </ApartmentsProvider>
-        </GalleryModalProvider>
-      </ApartmentsModalProvider>
+      <BookingModalProvider>
+        <ApartmentsModalProvider>
+          <GalleryModalProvider>
+            <ApartmentsProvider>
+              <React.StrictMode>
+                <GlobalStyle />
+                <App />
+              </React.StrictMode>
+            </ApartmentsProvider>
+          </GalleryModalProvider>
+        </ApartmentsModalProvider>
+      </BookingModalProvider>
     </GalleryDataProvider>
   </MainDataProvider>,
   document.getElementById("root")

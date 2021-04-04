@@ -129,6 +129,11 @@ export const ContactContainer = styled.div`
       transform: translate(-50%, -50%);
       font-size: 10px;
       font-family: Open Sans;
+      a,
+      a:visited {
+        color: #000;
+        text-decoration: none;
+      }
     }
   }
 

@@ -16,12 +16,12 @@ const Contact = () => {
           <div>
             <div>
               <i className='fas fa-phone-alt'></i>{" "}
-              <a href='tel:+48783113111'>+48 783 113 111</a>
+              <a href='tel:+48602257284'>+48 602 257 284</a>
             </div>
             <div>
               <i className='fas fa-envelope'></i>{" "}
-              <a href='mailto:biuro@nadczorsztynem.pl'>
-                biuro@nadczorsztynem.pl
+              <a href='mailto:prestigeroland@gmail.com'>
+                prestigeroland@gmail.com
               </a>
             </div>
             <div>
@@ -65,7 +65,10 @@ const Contact = () => {
         </div>
       </div>
       <div className='footer'>
-        <p>© Copyright - BTF Developer | Wdrożenie: PAWEŁ I MATI</p>
+        <p>
+          © Copyright <a href='https://github.com/Pabeloszh'>Paweł Mielech</a> &{" "}
+          <a href='https://github.com/Mateusz-Fikus'>Mateusz Fikus</a>
+        </p>
       </div>
     </ContactContainer>
   );

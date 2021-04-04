@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useLocation } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import BookingModal from "./BookingModal/BookingModal";
+import { BookingModalContext } from "../../../context/BookingModalContext";
 import { NavbarContainer } from "./Navbar.style";
 
 const Navbar = ({ menu, toggleMenu }) => {
   const [navTop, setNavTop] = useState(window.scrollY);
   const [winWidth, setWinWidth] = useState(window.innerWidth);
+  const [bModal, toggleBModal] = useContext(BookingModalContext);
   const location = useLocation();
   const history = useHistory();
 
@@ -46,6 +49,7 @@ const Navbar = ({ menu, toggleMenu }) => {
   useEffect(() => {
     if (winWidth <= 768) {
       document.querySelector(".nav").classList.remove("sticky");
+      toggleMenu(false);
     }
   }, [winWidth]);
 
@@ -77,18 +81,28 @@ const Navbar = ({ menu, toggleMenu }) => {
           onClick={() => {
             window.scrollTo(0, 0);
             history.push("/");
+            toggleMenu(!menu);
           }}
         >
           <a>STRONA GŁÓWNA</a>
         </div>
         <p>{"•"}</p>
-        <a href='https://czorsztynprestige.pl/rezerwacje/'>
-          <div>
-            <a>REZERWACJE</a>
-          </div>
-        </a>
+        <div
+          onClick={() => {
+            window.scrollTo(0, 0);
+            history.push("/gallery");
+            toggleMenu(!menu);
+          }}
+        >
+          <a>GALERIA</a>
+        </div>
         <p>{"•"}</p>
-        <a href='https://nadczorsztynem.pl/category/atrakcje/'>
+        <a
+          href='https://nadczorsztynem.pl/category/atrakcje/'
+          onClick={() => {
+            toggleMenu(!menu);
+          }}
+        >
           <div>
             <a>ATRAKCJE</a>
           </div>
@@ -96,17 +110,23 @@ const Navbar = ({ menu, toggleMenu }) => {
         <p>{"•"}</p>
         <div
           onClick={() => {
-            window.scrollTo(0, 0);
-            history.push("/gallery");
+            toggleMenu(!menu);
+            toggleBModal(true);
           }}
         >
-          <a>GALERIA</a>
+          <a>REZERWACJE</a>
         </div>
         <p>{"•"}</p>
-        <div onClick={() => window.scrollTo(0, document.body.scrollHeight)}>
+        <div
+          onClick={() => {
+            window.scrollTo(0, document.body.scrollHeight);
+            toggleMenu(!menu);
+          }}
+        >
           <a>KONTAKT</a>
         </div>
       </div>
+      {bModal && <BookingModal />}
     </NavbarContainer>
   );
 };

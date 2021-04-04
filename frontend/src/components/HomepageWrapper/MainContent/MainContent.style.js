@@ -159,6 +159,10 @@ export const MainContainer = styled.div`
   }
   @media ${device.mobileL} {
     height: 100vh;
+    .scl-media-mobile {
+      bottom: 15px;
+      right: 10px;
+    }
     .title-container {
       top: 50%;
       left: 50%;
