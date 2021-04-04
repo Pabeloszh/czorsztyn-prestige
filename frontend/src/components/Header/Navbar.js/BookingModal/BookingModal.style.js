@@ -60,6 +60,7 @@ export const BModalContainer = styled.div`
       }
     }
     div {
+      padding-left: 18px;
       a,
       a:visited {
         color: #fff;
@@ -100,6 +101,7 @@ export const BModalContainer = styled.div`
         margin-bottom: 20px;
       }
       div {
+        padding-left: 18px;
         a,
         a:visited {
           margin-right: 15px;
