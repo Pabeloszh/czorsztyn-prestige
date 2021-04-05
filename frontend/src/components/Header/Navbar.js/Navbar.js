@@ -26,7 +26,7 @@ const Navbar = ({ menu, toggleMenu }) => {
       divs[0].classList.add("active");
     }
     if (location.pathname === "/gallery") {
-      divs[3].classList.add("active");
+      divs[1].classList.add("active");
     }
   }, [location.pathname]);
 

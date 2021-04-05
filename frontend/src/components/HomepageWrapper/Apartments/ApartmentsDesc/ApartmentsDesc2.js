@@ -128,45 +128,53 @@ const ApartmentsInfo2 = () => {
           <hr />
           <div>
             <h4>Stychlyn 112/2</h4>
-            <p>160m2</p>
+            <p>165m2</p>
           </div>
           <hr />
         </div>
         <div className='contact'>
-          <a href='tel:+48602257284'>+48 602 257 284</a>
+          <a href='tel:+48602257284'></a>
         </div>
         <div className='desc'>
           <div>
             <p>{"•"}</p>
-            <p>Apartament dla 6-8 osób</p>
+            <p>Trzy sypialnie (dwa łóżka 2-os, dwa 1-os + 2 miejsca duża sofa salon)</p>
           </div>
           <div>
             <p>{"•"}</p>
-            <p>1 sypialnia 1+1os</p>
+            <p>Aneks kuchenny z kompletnym wyposażeniem + ekspres do kawy</p>
           </div>
           <div>
             <p>{"•"}</p>
-            <p>2 sypialnie 2os</p>
+            <p>Duży salon z rozkładaną sofą, fotelem telewizją satelitarną, wyjściem na duży 20m2 taras z przepięknym widokiem na zalew Czorsztyński</p>
           </div>
           <div>
             <p>{"•"}</p>
-            <p>2 łazienki</p>
+            <p>Jadalnia z dużym stołem + 8 krzeseł</p>
           </div>
           <div>
             <p>{"•"}</p>
-            <p>kuchnia</p>
+            <p>Łazienka z sauną, prysznicem i toaletą</p>
           </div>
           <div>
             <p>{"•"}</p>
-            <p>salon</p>
+            <p>Druga łazienka z wanną i toaletą</p>
           </div>
           <div>
             <p>{"•"}</p>
-            <p>garaż</p>
+            <p>Oddzielne WC</p>
           </div>
           <div>
             <p>{"•"}</p>
-            <p>sauna</p>
+            <p>Garaż</p>
+          </div>
+          <div>
+            <p>{"•"}</p>
+            <p>Ponadto łóżeczko dla dziecka, szybkie Wi-Fi, sprzęt do prasowania, pralka i 4 rowery trekkingowe wysokiej klasy oraz sprzęt wypoczynkowy na tarasie</p>
+          </div>
+          <div>
+            <p>{"•"}</p>
+            <p>Do apartamentu przynależą 2 miejsca parkingowe zewnętrzne</p>
           </div>
         </div>
         <div className='book'>

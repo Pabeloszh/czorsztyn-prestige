@@ -1,16 +1,16 @@
 import os
 from pathlib import Path
+from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-CORS_ORIGIN_ALLOW_ALL = True
-
-SECRET_KEY = 'p29(mnz2kz+o1_8+e)=#h6%zu!y#0m(k$+2bzfibjxp@4y57%&'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+
 CORS_ORIGIN_ALLOW_ALL = True
 
 

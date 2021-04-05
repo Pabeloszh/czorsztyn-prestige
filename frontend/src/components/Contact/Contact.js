@@ -27,7 +27,7 @@ const Contact = () => {
             <div>
               <i className='fas fa-map-marker-alt'></i>
               <a href='https://www.google.pl/maps/place/Czorsztyn+Prestige/@49.4447416,20.285381,17z/data=!4m13!1m7!3m6!1s0x4715f8a386e7ae7f:0x8e476ab9460ef8f3!2sZa+Stylchyn+110,+34-440+Kluszkowce!3b1!8m2!3d49.4447381!4d20.2875697!3m4!1s0x4715f8a467e55e0f:0x7fdbe86aeb92fcd2!8m2!3d49.4444716!4d20.2882022'>
-                ul. Za Stylchyn 110
+                ul. Za Stylchyn 112
                 <br />
                 34-440 Kluszkowce
               </a>
@@ -38,9 +38,8 @@ const Contact = () => {
           <h5>O nas:</h5>
           <div>
             <p>
-              Bacon ipsum dolor amet alcatra chicken leberkas, pancetta swine
-              sausage beef ribs burgdoggen prosciutto meatloaf chislic boudin
-              turducken. Beef jerky.
+            Apartamenty Czorsztyn Prestige zlokalizowane są w pierwszej linii zabudowy nad zalewem Czorsztyńskim.
+              Są doskonałym miejscem do wypoczynku oferującym przepiękne widoki i pełen komfort pobytu.          
             </p>
           </div>
         </div>
