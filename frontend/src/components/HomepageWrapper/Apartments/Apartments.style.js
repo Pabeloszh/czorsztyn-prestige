@@ -21,12 +21,12 @@ export const ApartmentsContainer = styled.div`
   }
   @media ${device.tablet} {
     .container-slide {
-      height: 775px;
+      height: 800px;
     }
   }
   @media ${device.mobileL} {
     .container-slide {
-      height: 625px;
+      height: 675px;
     }
   }
 `;

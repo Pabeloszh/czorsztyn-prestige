@@ -64,11 +64,11 @@ export const ApartmentsDescContainer = styled.div`
   }
   .desc-cont {
     border-left: 4px #ba9e6e solid;
-    padding: 95px 0;
+    padding: 8% 0;
     .title {
       display: flex;
       align-items: center;
-      margin-bottom: 5px;
+      margin-bottom: 15px;
       hr {
         height: 2px;
         border: 2px #ba9e6e solid;
@@ -100,37 +100,24 @@ export const ApartmentsDescContainer = styled.div`
         }
       }
     }
-    .contact,
     .desc {
-      padding-left: 75px;
-    }
-    .contact {
-      margin-bottom: 8px;
-      a {
-        text-decoration: none;
-        font-family: Open Sans;
-        font-weight: 300;
-        font-size: 18px;
-        color: #ffffffcc;
-      }
-      a:visited {
-        color: #ffffffcc;
-      }
-    }
-    .desc {
+      padding: 0 25px 0 35px;
       margin-bottom: 35px;
       div {
         display: flex;
         align-items: center;
+        margin-bottom: 15px;
         p:first-child {
           color: #ba9e6e;
           font-size: 40px;
+          height: 30px;
+          line-height: 30px;
         }
         p:last-child {
-          margin-left: 20px;
+          margin-left: 15px;
           color: #fff;
           font-family: Open Sans;
-          font-size: 18px;
+          font-size: 16px;
         }
       }
       div:not(:first-child) {
@@ -201,7 +188,7 @@ export const ApartmentsDescContainer = styled.div`
     .desc-cont {
       border-left: none;
       border-top: 4px #ba9e6e solid;
-      padding: 55px 0;
+      padding: 6% 0;
       .title {
         div {
           h4 {
@@ -215,15 +202,12 @@ export const ApartmentsDescContainer = styled.div`
           width: calc(100% - 220px);
         }
       }
-      .contact {
-        a {
-          font-size: 14px;
-        }
-      }
       .desc {
         div {
-          margin-bottom: 10px;
+          margin-bottom: 12.5px;
           p:first-child {
+            height: 20px;
+            line-height: 20px;
             font-size: 25px;
           }
           p:last-child {
@@ -244,7 +228,7 @@ export const ApartmentsDescContainer = styled.div`
     }
   }
   @media ${device.tablet} {
-    height: 775px;
+    height: 800px;
     grid-template-rows: 350px 450px;
     .gallery-cont {
       border-top: 2px #ba9e6e solid;
@@ -277,7 +261,7 @@ export const ApartmentsDescContainer = styled.div`
     .desc-cont {
       border-left: none;
       border-top: 2px #ba9e6e solid;
-      padding: 40px 0;
+      padding: 7% 0;
       .title {
         hr {
           border: 1px #ba9e6e solid;
@@ -291,12 +275,8 @@ export const ApartmentsDescContainer = styled.div`
           }
         }
       }
-      .contact {
-        a {
-          font-size: 12px;
-        }
-      }
       .desc {
+        margin-bottom: 25px;
         div {
           margin-bottom: 10px;
           p:first-child {
@@ -323,7 +303,7 @@ export const ApartmentsDescContainer = styled.div`
     }
   }
   @media ${device.mobileL} {
-    height: 625px;
+    height: 675px;
     grid-template-rows: 250px 375px;
     .gallery-cont {
       border-top: 2px #ba9e6e solid;
@@ -352,8 +332,9 @@ export const ApartmentsDescContainer = styled.div`
     .desc-cont {
       border-left: none;
       border-top: 2px #ba9e6e solid;
-      padding: 40px 0;
+      padding: 12% 0;
       .title {
+        margin-bottom: 12.5px;
         hr {
           border: 1px #ba9e6e solid;
         }
@@ -370,15 +351,13 @@ export const ApartmentsDescContainer = styled.div`
           }
         }
       }
-      .contact {
-        a {
-          font-size: 10px;
-        }
-      }
       .desc {
+        margin-bottom: 20px;
         div {
           margin-bottom: 10px;
           p:first-child {
+            height: 15px;
+            line-height: 15px;
             font-size: 16px;
           }
           p:last-child {
@@ -403,6 +382,11 @@ export const ApartmentsDescContainer = styled.div`
           border-radius: 2px;
         }
       }
+    }
+  }
+  @media ${device.mobileM} {
+    .desc-cont {
+      padding: 10% 0;
     }
   }
 `;

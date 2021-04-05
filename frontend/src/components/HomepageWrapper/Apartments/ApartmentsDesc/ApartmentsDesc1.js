@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { MainDataContext } from "../../../../context/MainDataContext";
 import { ApartmentsModalContext } from "../../../../context/ApartmentsModalContext";
 import { BookingModalContext } from "../../../../context/BookingModalContext";
-import { ApartmentsDescContainer } from "./ApartmentsDesc.style";
+import { ApartmentsDescContainer } from "./ApartmentsDesc1.style";
 
 const ApartmentsDesc1 = () => {
   const [data, setData] = useContext(MainDataContext);
@@ -132,9 +132,6 @@ const ApartmentsDesc1 = () => {
           </div>
           <hr />
         </div>
-        <div className='contact'>
-          <a href='tel:+48602257284'></a>
-        </div>
         <div className='desc'>
           <div>
             <p>{"•"}</p>
@@ -145,20 +142,17 @@ const ApartmentsDesc1 = () => {
           <div>
             <p>{"•"}</p>
             <p>
-              Salon z wyjściem na taras, rozkładaną dużą sofą, i przepięknym widokiem na zalew Czorsztyński{" "}
+              Salon z wyjściem na taras, rozkładaną dużą sofą, i przepięknym
+              widokiem na zalew Czorsztyński{" "}
             </p>
           </div>
           <div>
             <p>{"•"}</p>
-            <p>
-            Aneks kuchenny z kompletnym wyposażeniem + ekspres do kawy
-            </p>
+            <p>Aneks kuchenny z kompletnym wyposażeniem + ekspres do kawy</p>
           </div>
           <div>
             <p>{"•"}</p>
-            <p>
-            Jadalnia z dużym stołem + 6 krzeseł
-            </p>
+            <p>Jadalnia z dużym stołem + 6 krzeseł</p>
           </div>
           <div>
             <p>{"•"}</p>
@@ -170,13 +164,14 @@ const ApartmentsDesc1 = () => {
           </div>
           <div>
             <p>{"•"}</p>
-            <p>
-              Garaż{" "}
-            </p>
+            <p>Garaż </p>
           </div>
           <div>
             <p>{"•"}</p>
-            <p>Ponadto łóżeczko dla dziecka, szybkie Wi-Fi, sprzęt do prasowania, pralka oraz sprzęt wypoczynkowy na tarasie</p>
+            <p>
+              Ponadto łóżeczko dla dziecka, szybkie Wi-Fi, sprzęt do prasowania,
+              pralka oraz sprzęt wypoczynkowy na tarasie
+            </p>
           </div>
           <div>
             <p>{"•"}</p>
