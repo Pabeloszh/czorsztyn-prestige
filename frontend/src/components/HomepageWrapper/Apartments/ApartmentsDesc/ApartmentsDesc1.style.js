@@ -64,7 +64,7 @@ export const ApartmentsDescContainer = styled.div`
   }
   .desc-cont {
     border-left: 4px #ba9e6e solid;
-    padding: 16% 0;
+    padding: 12% 0;
     .title {
       display: flex;
       align-items: center;
@@ -158,6 +158,11 @@ export const ApartmentsDescContainer = styled.div`
         transition: background-color 500ms ease-in-out;
         background-color: #836f4d;
       }
+    }
+  }
+  @media ${device.laptopL} {
+    .desc-cont {
+      padding: 16% 0;
     }
   }
   @media ${device.laptop} {
