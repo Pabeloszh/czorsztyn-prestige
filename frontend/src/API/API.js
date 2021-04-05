@@ -2,9 +2,9 @@ import axios from "axios";
 
 export default {
   getAll: () => {
-    return axios.get("http://127.0.0.1:8000/api/aps/");
+    return axios.get(window.location.protocol + "/api/aps/");
   },
   getGallery: () => {
-    return axios.get("http://127.0.0.1:8000/api/gallery/");
+    return axios.get(window.location.protocol + "/api/gallery/");
   },
 };
