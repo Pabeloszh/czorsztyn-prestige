@@ -12,7 +12,7 @@ export const BModalContainer = styled.div`
     left: 0;
     bottom: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: #000000cc;
     position: fixed;
     z-index: 4;
   }

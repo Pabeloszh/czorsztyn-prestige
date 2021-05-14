@@ -40,6 +40,18 @@ export const ApartmentsMainContainer = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     .apartm-container {
+      .overlay {
+        transition: all 200ms ease-out;
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: #000000bf;
+        z-index: 1;
+      }
       position: relative;
       transition: all 200ms ease-out;
       width: 500px;
@@ -53,11 +65,12 @@ export const ApartmentsMainContainer = styled.div`
         transition: all 200ms ease-out;
         visibility: visible;
         opacity: 1;
+        z-index: 2;
         position: absolute;
         bottom: 0;
         display: flex;
         justify-content: space-between;
-        padding: 0 25px 25px 25px;
+        padding: 0 25px 15px 25px;
         .ap-title {
           display: flex;
           align-items: center;
@@ -96,6 +109,7 @@ export const ApartmentsMainContainer = styled.div`
         visibility: hidden;
         opacity: 0;
         position: absolute;
+        z-index: 2;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -158,7 +172,7 @@ export const ApartmentsMainContainer = styled.div`
     }
     .apartm-container:hover {
       transition: all 200ms ease-out;
-      transform: scale(1.05);
+      transform: scale(1.025);
       .data-box {
         transition: all 200ms ease-out;
         visibility: hidden;
@@ -178,10 +192,18 @@ export const ApartmentsMainContainer = styled.div`
       margin-left: 30px;
     }
     .apartm-container:first-child:hover {
-      background-image: url(${(props) => props.ap1hover});
+      .overlay {
+        transition: all 200ms ease-out;
+        visibility: visible;
+        opacity: 1;
+      }
     }
     .apartm-container:last-child:hover {
-      background-image: url(${(props) => props.ap2hover});
+      .overlay {
+        transition: all 200ms ease-out;
+        visibility: visible;
+        opacity: 1;
+      }
     }
   }
   @media only screen and (max-width: 1250px) {

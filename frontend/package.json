@@ -18,7 +18,7 @@
     "uglifyjs-webpack-plugin": "^2.2.0",
     "web-vitals": "^1.1.0"
   },
-"scripts": {
+  "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

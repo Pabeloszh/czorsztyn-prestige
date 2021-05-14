@@ -5,6 +5,15 @@ export const SliderContainer = styled.div`
   width: 100%;
   height: 90vh;
   position: relative;
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #00000080;
+    z-index: 1;
+  }
   .slider {
     width: 100%;
     height: 100%;
@@ -13,12 +22,10 @@ export const SliderContainer = styled.div`
       width: 100%;
       height: 100%;
       display: flex;
-
       .photo {
         min-width: 100%;
         width: 100%;
         height: 100%;
-
         background-image: url(${(props) => props.data});
         background-repeat: no-repeat;
         background-size: cover;
@@ -29,6 +36,7 @@ export const SliderContainer = styled.div`
   .slider-info {
     width: 100%;
     position: absolute;
+    z-index: 2;
     top: calc(50% - 15px);
     left: 50%;
     transform: translate(-50%, -50%);
@@ -78,6 +86,7 @@ export const SliderContainer = styled.div`
   }
   .nav-dots {
     position: absolute;
+    z-index: 2;
     bottom: 0;
     left: 50%;
     transform: translate(-50%, -50%);
