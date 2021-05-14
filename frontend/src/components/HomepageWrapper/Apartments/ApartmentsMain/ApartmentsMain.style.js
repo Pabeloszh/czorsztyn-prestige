@@ -234,32 +234,6 @@ export const ApartmentsMainContainer = styled.div`
   }
   @media ${device.laptop} {
     height: 900px;
-    .mid-hr {
-      display: none;
-    }
-    .container {
-      flex-direction: column;
-      .apartm-container {
-        position: relative;
-        .data-box {
-          position: absolute;
-        }
-      }
-      .apartm-container:first-child,
-      .apartm-container:last-child {
-        margin: 0;
-      }
-      .apartm-container:first-child {
-        margin-bottom: 30px;
-      }
-      .apartm-container:last-child {
-        margin-top: 30px;
-      }
-    }
-  }
-  @media ${device.tablet} {
-    height: 800px;
-
     .title {
       hr {
         width: 12.5%;
@@ -321,6 +295,10 @@ export const ApartmentsMainContainer = styled.div`
           }
         }
       }
+      .apartm-container:first-child,
+      .apartm-container:last-child {
+        margin: 0;
+      }
       .apartm-container:first-child {
         margin-bottom: 20px;
       }
@@ -328,6 +306,9 @@ export const ApartmentsMainContainer = styled.div`
         margin-top: 20px;
       }
     }
+  }
+  @media ${device.tablet} {
+    height: 800px;
   }
   @media ${device.mobileL} {
     height: 675px;

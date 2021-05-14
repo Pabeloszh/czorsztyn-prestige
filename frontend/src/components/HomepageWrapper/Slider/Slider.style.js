@@ -146,7 +146,7 @@ export const SliderContainer = styled.div`
         }
         h4 {
           width: 100%;
-          padding: 0 50px;
+          padding: 0 150px;
           font-size: 18px;
         }
       }
@@ -183,7 +183,7 @@ export const SliderContainer = styled.div`
         }
         h4 {
           width: 100%;
-          padding: 0 35px;
+          padding: 0 45px;
           font-size: 16px;
         }
       }
@@ -220,7 +220,7 @@ export const SliderContainer = styled.div`
         }
         h4 {
           width: 100%;
-          padding: 0 15px;
+          padding: 0 25px;
           font-size: 12px;
         }
       }

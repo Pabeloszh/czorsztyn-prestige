@@ -88,19 +88,6 @@ export const NavbarContainer = styled.div`
   }
 
   @media ${device.laptop} {
-    height: 55px;
-    .nav {
-      div {
-        height: 55px;
-        padding: 18px 0;
-        a {
-          font-size: 14px;
-        }
-      }
-    }
-  }
-
-  @media ${device.tablet} {
     .nav {
       transition: all 200ms ease-out;
       visibility: ${(props) => (props.menu ? "visible" : "hidden")};

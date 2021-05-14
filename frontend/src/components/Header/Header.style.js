@@ -42,16 +42,6 @@ export const HeaderContainer = styled.div`
   }
 
   @media ${device.laptop} {
-    height: 155px;
-    .logo {
-      img {
-        height: 65px;
-        margin: 15px 0;
-      }
-    }
-  }
-
-  @media ${device.tablet} {
     position: fixed;
     height: ${(props) => (props.menu ? "100vh" : "65px")};
     transition: height 200ms linear;

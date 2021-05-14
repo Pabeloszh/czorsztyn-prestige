@@ -54,8 +54,8 @@ export const MainContainer = styled.div`
         width: 80px;
       }
     }
-    a{
-      cursor:pointer;
+    a {
+      cursor: pointer;
       i {
         transform: rotate(-90deg);
         font-size: 25px;
@@ -109,7 +109,7 @@ export const MainContainer = styled.div`
   }
 
   @media ${device.laptop} {
-    height: calc(100vh - 155px);
+    height: calc(100vh);
     padding: 30% 0;
 
     .title-container {
@@ -129,7 +129,7 @@ export const MainContainer = styled.div`
   }
 
   @media ${device.tablet} {
-    height:${window.innerHeight + "px"};
+    height: ${window.innerHeight + "px"};
     padding: 28% 0;
     .title-container {
       top: 50%;
@@ -191,7 +191,7 @@ export const MainContainer = styled.div`
     }
   }
   @media ${device.mobileM} {
-    padding:0;
+    padding: 0;
     .title-container {
       h1 {
         width: 300px;
@@ -202,4 +202,5 @@ export const MainContainer = styled.div`
         font-size: 14px;
       }
     }
+  }
 `;

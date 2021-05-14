@@ -45,6 +45,7 @@ const Gallery = () => {
               })
             }
             style={{ background: `url(${photo.pic})` }}
+            key={index}
           ></div>
         );
       })}

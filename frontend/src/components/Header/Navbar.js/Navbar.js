@@ -39,7 +39,7 @@ const Navbar = ({ menu, toggleMenu }) => {
   };
 
   useEffect(() => {
-    if (navTop > 119 && winWidth > 768) {
+    if (navTop > 119 && winWidth > 1024) {
       document.querySelector(".nav").classList.add("sticky");
     } else {
       document.querySelector(".nav").classList.remove("sticky");
@@ -47,7 +47,7 @@ const Navbar = ({ menu, toggleMenu }) => {
   }, [navTop]);
 
   useEffect(() => {
-    if (winWidth <= 768) {
+    if (winWidth <= 1024) {
       document.querySelector(".nav").classList.remove("sticky");
       toggleMenu(false);
     }
