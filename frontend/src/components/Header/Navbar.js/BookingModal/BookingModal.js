@@ -16,7 +16,7 @@ const BookingModal = () => {
           dzwoniąc na <a href='tel:+48602257284'>+48 602 257 284</a> bądź
           mailowo{" "}
           <a href='mailto:prestigeroland@gmail.com'>prestigeroland@gmail.com</a>{" "}
-          albo dokonać tego przez naszą stronę...
+          albo dokonać tego przez naszą stronę
         </p>
         <div>
           <a href='https://czorsztynprestige.pl/rezerwacje/'>Strona</a>

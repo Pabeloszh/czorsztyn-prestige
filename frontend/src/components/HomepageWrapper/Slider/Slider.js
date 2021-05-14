@@ -16,13 +16,6 @@ const Slider = () => {
 
   useEffect(() => {
     if (winWidth !== prevWinWidth) {
-      const p = document.querySelectorAll(".nav-dots p");
-
-      for (let i = 0; i < p.length; i++) {
-        p[i].classList.remove("active");
-        p[0].classList.add("active");
-      }
-
       setSlide(0);
       setPrevWinWidth(winWidth);
     }
@@ -42,6 +35,30 @@ const Slider = () => {
   }, []);
 
   useEffect(() => {
+    const interval = setInterval(
+      () => {
+        slide <
+        data.filter((obj) => {
+          if (obj.placement === "slider") return obj;
+        }).length
+          ? setSlide((prev) => prev + 1)
+          : setSlide(0);
+      },
+      slide ===
+        data.filter((obj) => {
+          if (obj.placement === "slider") return obj;
+        }).length
+        ? 500
+        : 8000
+    );
+    if (cooldown) {
+      clearInterval(interval);
+      setTimeout(() => setCooldown(false), 2000);
+    }
+    return () => clearInterval(interval);
+  }, [cooldown]);
+
+  useEffect(() => {
     if (slide === 0 && last)
       document.querySelector(".photo-slider").style.transition = "";
     else
@@ -52,47 +69,24 @@ const Slider = () => {
       -document.querySelector(".photo-slider").clientWidth * slide
     }px)`;
 
-    if (slide === 3) {
+    if (
+      slide ===
+      data.filter((obj) => {
+        if (obj.placement === "slider") return obj;
+      }).length
+    ) {
       isLast(true);
-      const p = document.querySelectorAll(".nav-dots p");
-      setTimeout(() => setSlide(0), 500);
-      for (let i = 0; i < p.length; i++) {
-        p[i].classList.remove("active");
-        p[0].classList.add("active");
-      }
+      setTimeout(() => {
+        setSlide(0);
+      }, 800);
     } else {
       isLast(false);
     }
   }, [slide]);
 
-  useEffect(() => {
-    const p = document.querySelectorAll(".nav-dots p");
-    if (!cooldown) setTimeout(() => setCooldown(true), 5000);
-    if (cooldown) {
-      setTimeout(() => setCooldown(false), 5000);
-      if (slide < 3) {
-        setSlide(slide + 1);
-        for (let i = 0; i < p.length; i++) {
-          if (slide < p.length - 1) {
-            p[i].classList.remove("active");
-            p[slide + 1].classList.add("active");
-          }
-        }
-      }
-    }
-  }, [cooldown]);
-
-  function toggleSlider(e, num) {
-    setCooldown(false);
-    setSlide(num);
-    const p = document.querySelectorAll(".nav-dots p");
-    for (let i = 0; i < p.length; i++) {
-      p[i].classList.remove("active");
-    }
-    e.target.classList.add("active");
-  }
   return (
     <SliderContainer>
+      <div className='overlay'></div>
       <div className='slider'>
         <div className='photo-slider'>
           {data
@@ -141,28 +135,33 @@ const Slider = () => {
         </div>
       </div>
       <div className='nav-dots'>
-        <p
-          className='active'
-          onClick={(e) => {
-            toggleSlider(e, 0);
-          }}
-        >
-          {"•"}
-        </p>
-        <p
-          onClick={(e) => {
-            toggleSlider(e, 1);
-          }}
-        >
-          {"•"}
-        </p>
-        <p
-          onClick={(e) => {
-            toggleSlider(e, 2);
-          }}
-        >
-          {"•"}
-        </p>
+        {data
+          .filter((obj) => {
+            if (obj.placement === "slider") return obj;
+          })
+          .map((o, index) => {
+            return (
+              <p
+                className={
+                  index === slide ||
+                  (index === 0 &&
+                    slide ===
+                      data.filter((obj) => {
+                        if (obj.placement === "slider") return obj;
+                      }).length)
+                    ? "active"
+                    : ""
+                }
+                onClick={() => {
+                  setSlide(index);
+                  setCooldown(true);
+                }}
+                key={index}
+              >
+                {"•"}
+              </p>
+            );
+          })}
       </div>
     </SliderContainer>
   );

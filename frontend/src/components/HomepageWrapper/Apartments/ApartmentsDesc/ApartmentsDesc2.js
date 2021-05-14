@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { MainDataContext } from "../../../../context/MainDataContext";
 import { ApartmentsModalContext } from "../../../../context/ApartmentsModalContext";
 import { BookingModalContext } from "../../../../context/BookingModalContext";
-import { ApartmentsDescContainer } from "./ApartmentsDesc2.style";
+import { ApartmentsDescContainer } from "./ApartmentsDesc.style";
 
 const ApartmentsInfo2 = () => {
   const [data, setData] = useContext(MainDataContext);
@@ -124,71 +124,73 @@ const ApartmentsInfo2 = () => {
         </div>
       </div>
       <div className='desc-cont'>
-        <div className='title'>
-          <hr />
-          <div>
-            <h4>Stychlyn 112/2</h4>
-            <p>165m2</p>
+        <div>
+          <div className='title'>
+            <hr />
+            <div>
+              <h4>Stychlyn 112/2</h4>
+              <p>165m2</p>
+            </div>
+            <hr />
           </div>
-          <hr />
-        </div>
-        <div className='desc'>
-          <div>
-            <p>{"•"}</p>
-            <p>
-              Trzy sypialnie (dwa łóżka 2-os, dwa 1-os + 2 miejsca duża sofa
-              salon)
-            </p>
+          <div className='desc'>
+            <div>
+              <p>{"•"}</p>
+              <p>
+                Trzy sypialnie (dwa łóżka 2-os, dwa 1-os + 2 miejsca duża sofa
+                salon)
+              </p>
+            </div>
+            <div>
+              <p>{"•"}</p>
+              <p>Aneks kuchenny z kompletnym wyposażeniem + ekspres do kawy</p>
+            </div>
+            <div>
+              <p>{"•"}</p>
+              <p>
+                Duży salon z rozkładaną sofą, fotelem telewizją satelitarną,
+                wyjściem na duży 20m2 taras z przepięknym widokiem na zalew
+                Czorsztyński
+              </p>
+            </div>
+            <div>
+              <p>{"•"}</p>
+              <p>Jadalnia z dużym stołem + 8 krzeseł</p>
+            </div>
+            <div>
+              <p>{"•"}</p>
+              <p>Łazienka z sauną, prysznicem i toaletą</p>
+            </div>
+            <div>
+              <p>{"•"}</p>
+              <p>Druga łazienka z wanną i toaletą</p>
+            </div>
+            <div>
+              <p>{"•"}</p>
+              <p>Oddzielne WC</p>
+            </div>
+            <div>
+              <p>{"•"}</p>
+              <p>Garaż</p>
+            </div>
+            <div>
+              <p>{"•"}</p>
+              <p>
+                Ponadto łóżeczko dla dziecka, szybkie Wi-Fi, sprzęt do
+                prasowania, pralka i 4 rowery trekkingowe wysokiej klasy oraz
+                sprzęt wypoczynkowy na tarasie
+              </p>
+            </div>
+            <div>
+              <p>{"•"}</p>
+              <p>Do apartamentu przynależą 2 miejsca parkingowe zewnętrzne</p>
+            </div>
           </div>
-          <div>
-            <p>{"•"}</p>
-            <p>Aneks kuchenny z kompletnym wyposażeniem + ekspres do kawy</p>
+          <div className='book'>
+            <hr />
+            <button onClick={() => toggleBModal(true)}>Rezerwuj</button>
+            <hr />
           </div>
-          <div>
-            <p>{"•"}</p>
-            <p>
-              Duży salon z rozkładaną sofą, fotelem telewizją satelitarną,
-              wyjściem na duży 20m2 taras z przepięknym widokiem na zalew
-              Czorsztyński
-            </p>
-          </div>
-          <div>
-            <p>{"•"}</p>
-            <p>Jadalnia z dużym stołem + 8 krzeseł</p>
-          </div>
-          <div>
-            <p>{"•"}</p>
-            <p>Łazienka z sauną, prysznicem i toaletą</p>
-          </div>
-          <div>
-            <p>{"•"}</p>
-            <p>Druga łazienka z wanną i toaletą</p>
-          </div>
-          <div>
-            <p>{"•"}</p>
-            <p>Oddzielne WC</p>
-          </div>
-          <div>
-            <p>{"•"}</p>
-            <p>Garaż</p>
-          </div>
-          <div>
-            <p>{"•"}</p>
-            <p>
-              Ponadto łóżeczko dla dziecka, szybkie Wi-Fi, sprzęt do prasowania,
-              pralka i 4 rowery trekkingowe wysokiej klasy oraz sprzęt
-              wypoczynkowy na tarasie
-            </p>
-          </div>
-          <div>
-            <p>{"•"}</p>
-            <p>Do apartamentu przynależą 2 miejsca parkingowe zewnętrzne</p>
-          </div>
-        </div>
-        <div className='book'>
-          <hr />
-          <button onClick={() => toggleBModal(true)}>Rezerwuj</button>
-          <hr />
         </div>
       </div>
     </ApartmentsDescContainer>

@@ -86,6 +86,7 @@ const Apartments = () => {
       <hr className='mid-hr' />
       <div className='container'>
         <div className='apartm-container'>
+          <div className='overlay'></div>
           <div className='data-box'>
             <div className='ap-title'>
               <hr />
@@ -119,6 +120,7 @@ const Apartments = () => {
           </div>
         </div>
         <div className='apartm-container'>
+          <div className='overlay'></div>
           <div className='data-box'>
             <div className='ap-title'>
               <hr />

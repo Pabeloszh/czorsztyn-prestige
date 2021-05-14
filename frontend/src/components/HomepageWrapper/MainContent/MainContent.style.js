@@ -16,6 +16,8 @@ const socialMedia = keyframes`
 
 export const MainContainer = styled.div`
   width: 100%;
+  padding: 20% 0;
+  height: 600px;
   height: calc(100vh - 185px);
   position: relative;
   z-index: 1;
@@ -85,6 +87,8 @@ export const MainContainer = styled.div`
   }
 
   @media only screen and (max-width: 1250px) {
+    padding: 25% 0;
+
     .scl-media {
       display: none;
     }
@@ -106,6 +110,8 @@ export const MainContainer = styled.div`
 
   @media ${device.laptop} {
     height: calc(100vh - 155px);
+    padding: 30% 0;
+
     .title-container {
       h1 {
         font-weight: 400;
@@ -123,7 +129,8 @@ export const MainContainer = styled.div`
   }
 
   @media ${device.tablet} {
-    height:100vh;
+    height:${window.innerHeight + "px"};
+    padding: 28% 0;
     .title-container {
       top: 50%;
       left: 50%;
@@ -158,7 +165,6 @@ export const MainContainer = styled.div`
     }
   }
   @media ${device.mobileL} {
-    height: 100vh;
     .scl-media-mobile {
       bottom: 15px;
       right: 10px;
@@ -185,6 +191,7 @@ export const MainContainer = styled.div`
     }
   }
   @media ${device.mobileM} {
+    padding:0;
     .title-container {
       h1 {
         width: 300px;

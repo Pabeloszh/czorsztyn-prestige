@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { MainDataContext } from "../../../../context/MainDataContext";
 import { ApartmentsModalContext } from "../../../../context/ApartmentsModalContext";
 import { BookingModalContext } from "../../../../context/BookingModalContext";
-import { ApartmentsDescContainer } from "./ApartmentsDesc1.style";
+import { ApartmentsDescContainer } from "./ApartmentsDesc.style";
 
 const ApartmentsDesc1 = () => {
   const [data, setData] = useContext(MainDataContext);
@@ -97,13 +97,13 @@ const ApartmentsDesc1 = () => {
               );
             })}
         </div>
-        <div className='go-back'>
-          <i
-            className='fas fa-arrow-left'
-            onClick={() => {
-              toggleApart();
-            }}
-          ></i>
+        <div
+          className='go-back'
+          onClick={() => {
+            toggleApart();
+          }}
+        >
+          <i className='fas fa-arrow-left'></i>
         </div>
         <i
           className='fas fa-chevron-left'
@@ -124,64 +124,66 @@ const ApartmentsDesc1 = () => {
         </div>
       </div>
       <div className='desc-cont'>
-        <div className='title'>
-          <hr />
-          <div>
-            <h4>Stychlyn 112/1</h4>
-            <p>120m2</p>
+        <div>
+          <div className='title'>
+            <hr />
+            <div>
+              <h4>Stychlyn 112/1</h4>
+              <p>120m2</p>
+            </div>
+            <hr />
           </div>
-          <hr />
-        </div>
-        <div className='desc'>
-          <div>
-            <p>{"•"}</p>
-            <p>
-              Dwie sypialnie (łóżko 2-os i dwa 1-os. + 2 miejsca sofa salon)
-            </p>
+          <div className='desc'>
+            <div>
+              <p>{"•"}</p>
+              <p>
+                Dwie sypialnie (łóżko 2-os i dwa 1-os. + 2 miejsca sofa salon)
+              </p>
+            </div>
+            <div>
+              <p>{"•"}</p>
+              <p>
+                Salon z wyjściem na taras, rozkładaną dużą sofą, i przepięknym
+                widokiem na zalew Czorsztyński{" "}
+              </p>
+            </div>
+            <div>
+              <p>{"•"}</p>
+              <p>Aneks kuchenny z kompletnym wyposażeniem + ekspres do kawy</p>
+            </div>
+            <div>
+              <p>{"•"}</p>
+              <p>Jadalnia z dużym stołem + 6 krzeseł</p>
+            </div>
+            <div>
+              <p>{"•"}</p>
+              <p>Łazienka z sauną, wanną, prysznicem i toaletą </p>
+            </div>
+            <div>
+              <p>{"•"}</p>
+              <p>Druga, osobna toaleta </p>
+            </div>
+            <div>
+              <p>{"•"}</p>
+              <p>Garaż </p>
+            </div>
+            <div>
+              <p>{"•"}</p>
+              <p>
+                Ponadto łóżeczko dla dziecka, szybkie Wi-Fi, sprzęt do
+                prasowania, pralka oraz sprzęt wypoczynkowy na tarasie
+              </p>
+            </div>
+            <div>
+              <p>{"•"}</p>
+              <p>Do apartamentu przynależą 2 miejsca parkingowe zewnętrzne</p>
+            </div>
           </div>
-          <div>
-            <p>{"•"}</p>
-            <p>
-              Salon z wyjściem na taras, rozkładaną dużą sofą, i przepięknym
-              widokiem na zalew Czorsztyński{" "}
-            </p>
+          <div className='book'>
+            <hr />
+            <button onClick={() => toggleBModal(true)}>Rezerwuj</button>
+            <hr />
           </div>
-          <div>
-            <p>{"•"}</p>
-            <p>Aneks kuchenny z kompletnym wyposażeniem + ekspres do kawy</p>
-          </div>
-          <div>
-            <p>{"•"}</p>
-            <p>Jadalnia z dużym stołem + 6 krzeseł</p>
-          </div>
-          <div>
-            <p>{"•"}</p>
-            <p>Łazienka z sauną, wanną, prysznicem i toaletą </p>
-          </div>
-          <div>
-            <p>{"•"}</p>
-            <p>Druga, osobna toaleta </p>
-          </div>
-          <div>
-            <p>{"•"}</p>
-            <p>Garaż </p>
-          </div>
-          <div>
-            <p>{"•"}</p>
-            <p>
-              Ponadto łóżeczko dla dziecka, szybkie Wi-Fi, sprzęt do prasowania,
-              pralka oraz sprzęt wypoczynkowy na tarasie
-            </p>
-          </div>
-          <div>
-            <p>{"•"}</p>
-            <p>Do apartamentu przynależą 2 miejsca parkingowe zewnętrzne</p>
-          </div>
-        </div>
-        <div className='book'>
-          <hr />
-          <button onClick={() => toggleBModal(true)}>Rezerwuj</button>
-          <hr />
         </div>
       </div>
     </ApartmentsDescContainer>

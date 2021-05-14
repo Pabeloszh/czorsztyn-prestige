@@ -19,7 +19,7 @@ export const HeaderContainer = styled.div`
   background-color: #262525;
   position: relative;
   top: 0;
-  z-index: 2;
+  z-index: 3;
 
   .sticky {
     position: fixed;
