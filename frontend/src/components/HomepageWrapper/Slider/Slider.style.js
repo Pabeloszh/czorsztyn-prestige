@@ -3,6 +3,7 @@ import { device } from "../../../utils/breakpoints";
 
 export const SliderContainer = styled.div`
   width: 100%;
+  min-height: 375px;
   height: 90vh;
   position: relative;
   .overlay {
